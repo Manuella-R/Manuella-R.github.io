@@ -2,7 +2,7 @@ document.getElementById("downloadButton").addEventListener("click", function() {
 
     var downloadLink = document.createElement("a");
     
-    downloadLink.href = "../cv/rehema.pdf";
+    downloadLink.href = "cv/rehema.pdf";
 
     downloadLink.download = "Rehema_CV.pdf";
     
