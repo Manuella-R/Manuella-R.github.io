@@ -725,7 +725,8 @@ h3.my-profession{
         max-width: 100%;
     }
     .home .home-img{
-        display: none;
+        flex: 0 0 100%;
+        max-width:100%;
     }
     .about .about-content .personal-info{
         flex: 0 0 100%;
@@ -746,27 +747,5 @@ h3.my-profession{
         flex: 0 0 100%;
         max-width:100%;
     }
-
-    @media(max-width:500px){ 
-    .contact .contact-form .col-6,
-    .contact .contact-info-item,
-    .portfolio .portfolio-item,
-    .service .service-item,
-    .about .about-content .education,
-    .about .about-content .experience,
-    .about .about-content .skills,
-    .about .about-content .personal-info{
-        flex: 0 0 100%;
-        max-width:100%;
-    }
 }
 
-@media only screen and (max-width: 400px) {
-    .style-switcher{
-        font-size: 24px;
-    }
-      .home .home-img{
-        flex: 0 0 100%;
-        max-width:100%;
-    }
-}
