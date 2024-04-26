@@ -748,4 +748,56 @@ h3.my-profession{
         max-width:100%;
     }
 }
+@media only screen and (max-width: 767px) {
+        body {
+            font-size: 14px;
+        }
+    
+        .section-title h2 {
+            font-size: 30px; 
+        }
+    
+        .home-info p {
+            font-size: 16px;
+        }
+    
+        .home-img img {
+            height: auto;
+            max-width: 100%; 
+        }
+    
+        .about .about-content .about-text h3,
+        .about .about-content .about-text p {
+            font-size: 18px; 
+        }
+    
+        .contact .contact-info-item h4,
+        .contact .contact-info-item p {
+            font-size: 14px;
+        }
+        .aside .nav-toggler {
+            display: block;
+            font-size: 25px;
+            left: 250px; 
+        }
+        
+        .aside .logo a {
+            font-size: 20px;
+        }
+    
+        .aside .logo a span {
+            font-size: 30px;
+        }
+    
+        .aside .nav li a {
+            font-size: 18px;
+        }
+    
+        .home .home-img img {
+            height: 250px; 
+    
+      
+    }
+    
+}
 
