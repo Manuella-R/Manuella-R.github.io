@@ -795,9 +795,10 @@ h3.my-profession{
     
         .home .home-img img {
             height: 250px; 
-    
-      
-    }
+        }
+    .home-img::before, .home-img::after{
+        display: none;   
+}
     
 }
 
