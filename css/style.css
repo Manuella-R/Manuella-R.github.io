@@ -712,10 +712,6 @@ h3.my-profession{
 }
 }
 @media(max-width:991px){
-   
-    .home .home-img {
-        display: none;
-    }
     .portfolio .portfolio-item,
     .contact .contact-info-item,
     .service .service-item{
@@ -723,7 +719,8 @@ h3.my-profession{
         max-width: 50%;  
     }
     .about .about-content .education,
-    .about .about-content .experience{
+    .about .about-content .experience,
+    .home .home-info{
         flex: 0 0 100%;
         max-width: 100%;
     }
@@ -794,11 +791,11 @@ h3.my-profession{
             font-size: 18px;
         }
     
-        .home .home-img {
-            display: none;
-        }
-.style-switcher {
+        .home-img::before, .home-img::after{
+        display: none;   
+}
+.style-switcher-toggler i, .day-night i {
     flex: 0 0 50%;
-    max-width: 50%;    
+        max-width: 50%;    
 }
 }
