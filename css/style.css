@@ -737,7 +737,7 @@ h3.my-profession{
     
 }
 
-@media(max-width: 767px){ 
+@media(max-width:991px){ 
     .contact .contact-form .col-6,
     .contact .contact-info-item,
     .portfolio .portfolio-item,
