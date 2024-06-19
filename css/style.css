@@ -758,7 +758,7 @@ h3.my-profession{
         max-width: 100%;
     }
 
-    .home .home-img{
+    .home .home-img img, .home-img::before, .home-img::after{
         display: none;
     }
 
