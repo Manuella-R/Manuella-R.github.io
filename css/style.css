@@ -762,8 +762,7 @@ h3.my-profession{
         }
     
         .home-img img {
-            height: auto;
-            max-width: 100%; 
+            display: none;
         }
         .about .about-content .about-text h3,
         .about .about-content .about-text p {
@@ -795,9 +794,8 @@ h3.my-profession{
         .home-img::before, .home-img::after{
         display: none;   
 }
-.style-switcher-toggler i, .day-night i {
-    font-size: 40px;
-    width: 40px;     
-    height: 40px;   
+.style-switcher {
+    flex: 0 0 50%;
+    max-width: 50%;    
 }
 }
