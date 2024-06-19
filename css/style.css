@@ -755,10 +755,7 @@ h3.my-profession{
             font-size: 30px;
         }
     
-        .about .about-content .education,
-    .about .about-content .experience,
-    .about .about-content .skills,
-    .about .about-content .personal-info
+       .about,
         .about .about-content .about-text h3,
         .about .about-content .about-text p {
             font-size: 25px; 
