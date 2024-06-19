@@ -791,9 +791,9 @@ h3.my-profession{
             font-size: 18px;
         }
     
-        .home-img::before, .home-img::after{
-        display: none;   
-}
+        ..home .home-img {
+            display: none;
+        }
 .style-switcher {
     flex: 0 0 50%;
     max-width: 50%;    
