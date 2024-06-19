@@ -76,27 +76,23 @@ justify-content: space-between;
     background:#2ba04e;
 }
 
-@media only screen and (max-width: 767px) {
-     .style-switcher{
+@media only screen and (max-width:991px) {
+    .style-switcher{
         width: 50px;
     }
   
     .style-switcher .s-icon {
         position: absolute;
-        height: 60px; /* Increased height for better visibility */
-        width: 60px; /* Increased width for better visibility */
+        height: 100px; /* Increased height for better visibility */
+        width: 100px; /* Increased width for better visibility */
         text-align: center;
         font-size: 30px; /* Increased font size for better visibility */
         background-color: var(--bg-black-100);
         color: var(--text-black-900);
-        right: 100%;
-        border: 1px solid var(--bg-black-50);
-        margin-right: 25px;
+        right: 100%;     
         cursor: pointer;
         transition: all 0.5s ease;
         border-radius: 60%;
     }
     
-}
-    }
 }
