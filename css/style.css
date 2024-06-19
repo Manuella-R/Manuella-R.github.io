@@ -712,31 +712,23 @@ h3.my-profession{
 }
 }
 @media(max-width:991px){
-    .portfolio .portfolio-item,
-    .contact .contact-info-item,
+     .portfolio .portfolio-item,
+     .contact .contact-info-item,
     .service .service-item{
-        flex: 0 0 50%;
-        max-width: 50%;  
+        flex: 0 0 100%;
+        max-width: 100%;
     }
-    .about .about-content .education,
-    .about .about-content .experience,
+    
     .home .home-info{
         flex: 0 0 100%;
         max-width: 100%;
     }
-    .home .home-img{
-        flex: 0 0 100%;
-        max-width:100%;
+    .home .home-img
+    {
+        display: none;
     }
-    .about .about-content .personal-info{
-        flex: 0 0 100%;
-        max-width:100%;
-    }
-    
 }
-
-@media(max-width:991px){ 
-    .contact .contact-form .col-6,
+@media  (max-width: 767px) {
     .contact .contact-info-item,
     .portfolio .portfolio-item,
     .service .service-item,
@@ -745,10 +737,8 @@ h3.my-profession{
     .about .about-content .skills,
     .about .about-content .personal-info{
         flex: 0 0 100%;
-        max-width:100%;
+        max-width: 100%;
     }
-}
-@media only screen and (max-width: 767px) {
         body {
             font-size: 14px;
         }
@@ -761,10 +751,7 @@ h3.my-profession{
             font-size: 16px;
         }
     
-        .home-img img {
-            height: auto;
-            max-width: 100%; 
-        }
+       
         .about .about-content .about-text h3,
         .about .about-content .about-text p {
             font-size: 18px; 
@@ -774,25 +761,5 @@ h3.my-profession{
         .contact .contact-info-item p {
             font-size: 14px;
         }
-        .aside .nav-toggler {
-            display: block;
-            font-size: 25px;
-            left: 250px; 
-        }
-        
-        .aside .logo a {
-            font-size: 20px;
-        }
-    
-        .aside .logo a span {
-            font-size: 30px;
-        }
-    
-        .aside .nav li a {
-            font-size: 18px;
-        }
-    
-        .home-img::before, .home-img::after{
-        display: none;   
-}
+      
 }
