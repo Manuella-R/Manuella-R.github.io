@@ -712,6 +712,9 @@ h3.my-profession{
 }
 }
 @media(max-width:991px){
+    .main-content{
+        margin-top: -10px;
+    }
     .about .about-content .education,
     .about .about-content .experience,
     .about .about-content .skills,
