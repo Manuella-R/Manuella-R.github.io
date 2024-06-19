@@ -749,53 +749,78 @@ h3.my-profession{
     }
 }
 @media only screen and (max-width: 767px) {
-        body {
-            font-size: 14px;
-        }
-    
-        .section-title h2 {
-            font-size: 30px; 
-        }
-    
-        .home-info p {
-            font-size: 16px;
-        }
-    
-        .home-img img {
-            display: none;
-        }
-        .about .about-content .about-text h3,
-        .about .about-content .about-text p {
-            font-size: 18px; 
-        }
-    
-        .contact .contact-info-item h4,
-        .contact .contact-info-item p {
-            font-size: 14px;
-        }
-        .aside .nav-toggler {
-            display: block;
-            font-size: 25px;
-            left: 250px; 
-        }
-        
-        .aside .logo a {
-            font-size: 20px;
-        }
-    
-        .aside .logo a span {
-            font-size: 30px;
-        }
-    
-        .aside .nav li a {
-            font-size: 18px;
-        }
-    
-        .home-img::before, .home-img::after{
-        display: none;   
+    /* Flex and max-width adjustments */
+    .portfolio .portfolio-item,
+    .contact .contact-info-item,
+    .service .service-item {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .about .about-content .education,
+    .about .about-content .experience,
+    .home .home-info,
+    .home .home-img,
+    .about .about-content .personal-info,
+    .contact .contact-form .col-6,
+    .about .about-content .skills {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    /* Font size adjustments */
+    body {
+        font-size: 14px;
+    }
+
+    .section-title h2 {
+        font-size: 30px;
+    }
+
+    .home-info p {
+        font-size: 16px;
+    }
+
+    .about .about-content .about-text h3,
+    .about .about-content .about-text p,
+    .contact .contact-info-item h4,
+    .contact .contact-info-item p {
+        font-size: 18px;
+    }
+
+    .aside .nav-toggler {
+        display: block;
+        font-size: 25px;
+        left: 250px;
+    }
+
+    .aside .logo a {
+        font-size: 20px;
+    }
+
+    .aside .logo a span {
+        font-size: 30px;
+    }
+
+    .aside .nav li a {
+        font-size: 18px;
+    }
+
+    /* Hide elements */
+    .home-img img {
+        display: none;
+    }
+
+    .home-img::before,
+    .home-img::after {
+        display: none;
+    }
+
+    /* Adjust icon size */
+    .style-switcher-toggler i,
+    .day-night i {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
 }
-.style-switcher-toggler i, .day-night i {
-    flex: 0 0 50%;
-        max-width: 50%;    
-}
-}
+
