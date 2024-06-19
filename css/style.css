@@ -755,11 +755,14 @@ h3.my-profession{
             font-size: 30px;
         }
     
-       .about,
+       .about h5,
+        .about p,
         .about .about-content .about-text h3,
         .about .about-content .about-text p {
-            font-size: 25px; 
+            font-size: 25px; /* Equivalent to 20px assuming the default font size is 16px */
+            line-height: 1.5; /* Improved readability with slightly increased line spacing */
         }
+        
     
         .contact .contact-info-item h4,
         .contact .contact-info-item p {
