@@ -94,8 +94,9 @@
         border-radius: 60%; /* Adjusted border radius for better visibility */
        
     }
-    .style-switcher-toggler .fa-cog{
-         margin-bottom: 30px;
-    }
+    .style-switcher-toggler,
+.day-night {
+    margin-right: 10px; /* Adjust the value as needed */
+}
 }
 
