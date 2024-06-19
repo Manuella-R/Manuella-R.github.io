@@ -739,27 +739,5 @@ h3.my-profession{
         flex: 0 0 100%;
         max-width: 100%;
     }
-        body {
-            font-size: 14px;
-        }
-    
-        .section-title h2 {
-            font-size: 30px; 
-        }
-    
-        .home-info p {
-            font-size: 16px;
-        }
-    
-       
-        .about .about-content .about-text h3,
-        .about .about-content .about-text p {
-            font-size: 18px; 
-        }
-    
-        .contact .contact-info-item h4,
-        .contact .contact-info-item p {
-            font-size: 14px;
-        }
-      
+     
 }
