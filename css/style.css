@@ -731,6 +731,28 @@ h3.my-profession{
     {
         display: none;
     }
+       body {
+            font-size: 25px;
+        }
+    
+        .section-title h2 {
+            font-size:40px; 
+        }
+    
+        .home-info p {
+            font-size: 30px;
+        }
+    
+       
+        .about .about-content .about-text h3,
+        .about .about-content .about-text p {
+            font-size: 25px; 
+        }
+    
+        .contact .contact-info-item h4,
+        .contact .contact-info-item p {
+            font-size: 20px;
+        }
 }
 @media  (max-width: 767px) {
     .contact .contact-info-item,
