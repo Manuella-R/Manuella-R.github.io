@@ -77,13 +77,13 @@ justify-content: space-between;
 }
 
 @media only screen and (max-width: 767px) {
-    .style-switcher {
+  
+    .style-switcher .s-icon {
         position: absolute;
-        height: 100px;
-        width: 100%;
-        max-width: 300px; 
+        height: 60px; /* Increased height for better visibility */
+        width: 60px; /* Increased width for better visibility */
         text-align: center;
-        font-size: 30px;
+        font-size: 30px; /* Increased font size for better visibility */
         background-color: var(--bg-black-100);
         color: var(--text-black-900);
         right: 100%;
@@ -91,7 +91,9 @@ justify-content: space-between;
         margin-right: 25px;
         cursor: pointer;
         transition: all 0.5s ease;
-        border-radius: 50%;
+        border-radius: 60%;
+    }
     
+}
     }
 }
