@@ -740,6 +740,10 @@ h3.my-profession{
 
 
 @media only screen and (max-width: 767px) {
+
+     .home-img {
+        display: none;
+    }
     /* Flex and max-width adjustments */
     .portfolio .portfolio-item,
     .contact .contact-info-item,
@@ -758,11 +762,7 @@ h3.my-profession{
         max-width: 100%;
     }
 
-    .home .home-img img, .home-img::before, .home-img::after{
-        display: none;
-    }
-
-    /* Font size adjustments */
+       /* Font size adjustments */
     body {
         font-size: 14px;
     }
