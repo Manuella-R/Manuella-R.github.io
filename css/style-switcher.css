@@ -92,6 +92,10 @@
         width: 80px;
         font-size: 50px;
         border-radius: 60%; /* Adjusted border radius for better visibility */
-        margin-bottom: 10px;
+       
+    }
+    .style-switcher-toggler .fa-cog{
+         margin-bottom: 10px;
     }
 }
+
