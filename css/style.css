@@ -699,6 +699,285 @@ h3.my-profession{
     height:50px;
     padding: 0 50px;
 }
+
+/* Home Section Enhancements */
+.home .tagline{
+    font-size: 18px;
+    margin: 10px 0 20px;
+    color: var(--text-black-700);
+    font-weight: 400;
+}
+
+.home .home-buttons{
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.home .download-cv{
+    background: transparent;
+    border: 2px solid var(--skin-color);
+    color: var(--skin-color);
+}
+
+.home .download-cv:hover{
+    background: var(--skin-color);
+    color: white;
+}
+
+.home .social-links{
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+}
+
+.home .social-links a{
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    border: 2px solid var(--skin-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--skin-color);
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.home .social-links a:hover{
+    background: var(--skin-color);
+    color: white;
+    transform: translateY(-5px);
+}
+
+/* Experience Section */
+.experience-section .timeline-box{
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.experience-section .timeline{
+    background-color: var(--bg-black-100);
+    padding: 30px 15px;
+    border: 1px solid var(--bg-black-50);
+    border-radius: 10px;
+    width: 100%;
+}
+
+.experience-section .timeline-item{
+    position: relative;
+    padding-left: 37px;
+    padding-bottom: 50px;
+}
+
+.experience-section .timeline-item:last-child{
+    padding-bottom: 0;
+}
+
+.experience-section .timeline-item::before{
+    content: '';
+    width: 1px;
+    position: absolute;
+    height: 100%;
+    left: 7px;
+    top: 0;
+    background-color: var(--skin-color);
+}
+
+.experience-section .timeline-item .cicle-dot{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: var(--skin-color);
+}
+
+.experience-section .timeline-date{
+    font-weight: 400;
+    font-size: 14px;
+    margin-bottom: 12px;
+    color: var(--text-black-700);
+}
+
+.experience-section .timeline-title{
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 15px;
+    text-transform: capitalize;
+    color: var(--text-black-900);
+}
+
+.experience-section .timeline-text{
+    line-height: 25px;
+    font-size: 16px;
+    color: var(--text-black-700);
+}
+
+/* Leadership Section */
+.leadership .leadership-content{
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.leadership .leadership-item{
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 30px;
+}
+
+.leadership .leadership-item-inner{
+    background-color: var(--bg-black-100);
+    border: 1px solid var(--bg-black-50);
+    border-radius: 10px;
+    padding: 30px 20px;
+    transition: all 0.3s ease;
+}
+
+.leadership .leadership-item-inner:hover{
+    box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+    transform: translateY(-5px);
+}
+
+.leadership .leadership-item-inner .icon{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--skin-color);
+    margin-bottom: 20px;
+}
+
+.leadership .leadership-item-inner .icon .fa,
+.leadership .leadership-item-inner .icon .fab{
+    font-size: 30px;
+    color: white;
+}
+
+.leadership .leadership-item-inner h4{
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: var(--text-black-900);
+    font-weight: 700;
+}
+
+.leadership .leadership-item-inner .date{
+    font-size: 14px;
+    color: var(--skin-color);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.leadership .leadership-item-inner .leadership-text{
+    color: var(--text-black-700);
+    line-height: 25px;
+}
+
+.leadership .leadership-item-inner ul{
+    list-style: none;
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+.leadership .leadership-item-inner ul li{
+    padding: 8px 0 8px 30px;
+    position: relative;
+    font-size: 15px;
+}
+
+.leadership .leadership-item-inner ul li::before{
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    top: 8px;
+    color: var(--skin-color);
+}
+
+/* Certifications Section */
+.certifications .cert-category{
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 40px;
+}
+
+.certifications .cert-title{
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-black-900);
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--skin-color);
+}
+
+.certifications .cert-title .fa{
+    color: var(--skin-color);
+    margin-right: 10px;
+}
+
+.certifications .cert-list{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.certifications .cert-item{
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    background-color: var(--bg-black-100);
+    border: 1px solid var(--bg-black-50);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.certifications .cert-item:hover{
+    box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+    transform: translateX(10px);
+}
+
+.certifications .cert-item .fa{
+    font-size: 30px;
+    color: var(--skin-color);
+    margin-top: 5px;
+}
+
+.certifications .cert-info h4{
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-black-900);
+    margin-bottom: 5px;
+}
+
+.certifications .cert-info p{
+    font-size: 14px;
+    color: var(--text-black-700);
+}
+
+/* Mobile Menu Toggle */
+.aside.open{
+    left: 0;
+}
+
+.nav-toggler.open span{
+    background-color: transparent;
+}
+
+.nav-toggler.open span::before{
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.nav-toggler.open span::after{
+    transform: rotate(-45deg);
+    top: 0;
+}
 @media(max-width:1199px){
     .aside{
         left: -270px;
@@ -715,15 +994,32 @@ h3.my-profession{
     .main-content{
         margin-top: -10px;
     }
+    .aside .nav-toggler{
+        display: flex;
+        left: 30px;
+    }
+    .aside{
+        left: -270px;
+    }
     .about .about-content .education,
     .about .about-content .experience,
     .about .about-content .skills,
-    .about .about-content .personal-info
+    .about .about-content .personal-info,
      .portfolio .portfolio-item,
      .contact .contact-info-item,
-     .service .service-item{
+     .service .service-item,
+     .leadership .leadership-item,
+     .certifications .cert-category{
         flex: 0 0 100%;
         max-width: 100%;
+    }
+    .home .home-buttons{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .home .home-buttons .btn{
+        width: 100%;
+        text-align: center;
     }
     .section .container{
         padding-top: 30px;
@@ -782,10 +1078,16 @@ h3.my-profession{
         .about .about-content .education,
     .about .about-content .experience,
     .about .about-content .skills,
-    .about .about-content .personal-info
+    .about .about-content .personal-info,
      .portfolio .portfolio-item,
      .contact .contact-info-item,
-     .service .service-item{
+     .service .service-item,
+     .leadership .leadership-item,
+     .certifications .cert-category{
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .contact .contact-form .col-6{
         flex: 0 0 100%;
         max-width: 100%;
     }
