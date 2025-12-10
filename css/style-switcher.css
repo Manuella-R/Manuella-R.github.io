@@ -1,15 +1,16 @@
 .style-switcher {
     position: fixed;
     right: 0;
-    top: 10px;
+    top: 60px;
     padding: 15px;
     width: 200px;
     border: 1px solid var(--bg-black-50);
     background: var(--bg-black-100);
-    z-index: 10;
+    z-index: 1001;
     border-radius: 5px;
-    transition: all 0.5s ease;
+    transition: all 0.3s ease;
     transform: translateX(100%);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
 }
 
 .style-switcher.open {
@@ -28,12 +29,23 @@
     border: 1px solid var(--bg-black-50);
     margin-right: 25px;
     cursor: pointer;
-    transition: all 0.5s ease;
+    transition: all 0.3s ease;
     border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.style-switcher .s-icon:hover {
+    background: linear-gradient(135deg, var(--skin-color), #d63384);
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(236, 9, 130, 0.4);
 }
 
 .style-switcher .s-icon i {
-    line-height: 40px;
+    line-height: 1;
 }
 
 .style-switcher .style-switcher-toggler {
@@ -46,10 +58,11 @@
 
 .style-switcher h4 {
     margin: 0 0 10px;
-    color: var(--text-black-700);
+    color: var(--text-black-900);
     font-size: 16px;
     font-weight: 600;
     text-transform: capitalize;
+    text-align: center;
 }
 
 .style-switcher .colors {
@@ -63,7 +76,20 @@
     height: 30px;
     width: 30px;
     border-radius: 50%;
-    border: 1px solid pink;
+    border: 2px solid var(--bg-black-50);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 5px;
+}
+
+.style-switcher .colors span:hover {
+    transform: scale(1.2);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    border-color: var(--text-black-900);
+}
+
+.style-switcher .colors span:active {
+    transform: scale(0.95);
 }
 
 .style-switcher .color-1 {
@@ -86,16 +112,278 @@
     background: #2ba04e;
 }
 
-@media only screen and (max-width: 991px) {
-    .style-switcher .s-icon {
-        height: 80px;
-        width: 80px;
-        font-size: 50px;
-        border-radius: 60%; /* Adjusted border radius for better visibility */
-       
-    }
-    .style-switcher-toggler {
-      margin-bottom: 30px; 
+/* Active color indicator */
+.style-switcher .colors span.active {
+    border: 3px solid var(--skin-color);
+    transform: scale(1.15);
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.4);
 }
+
+/* Add animation to style switcher panel */
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(-25px);
+        opacity: 1;
+    }
+}
+
+.style-switcher.open {
+    animation: slideInRight 0.3s ease forwards;
+}
+
+/* Improve color swatch grid */
+.style-switcher .colors {
+    gap: 8px;
+    padding: 5px 0;
+}
+
+/* Add tooltip effect for hover */
+.style-switcher .colors span::before {
+    content: attr(data-color);
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    background: var(--text-black-900);
+    color: white;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 10px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.style-switcher .colors span:hover::before {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+}
+
+/* Better icon styling */
+.style-switcher .s-icon.active {
+    background: linear-gradient(135deg, var(--skin-color), #d63384);
+    color: white;
+}
+
+/* Smooth panel background */
+.style-switcher {
+    backdrop-filter: blur(10px);
+}
+
+/* Add separator between sections */
+.style-switcher .day-night::after {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 2px;
+    background: var(--bg-black-50);
+}
+
+/* Color selection animation */
+@keyframes colorPulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.4);
+    }
+    100% {
+        transform: scale(1.15);
+    }
+}
+
+/* Settings icon spin on open */
+.style-switcher.open .style-switcher-toggler i {
+    animation: spin 0.5s ease;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Add a subtle glow to the panel */
+.style-switcher::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, var(--skin-color), transparent, var(--skin-color));
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.style-switcher.open::before {
+    opacity: 0.3;
+}
+
+/* Improve mobile touch targets */
+@media (hover: none) and (pointer: coarse) {
+    .style-switcher .colors span {
+        height: 35px;
+        width: 35px;
+        margin: 5px;
+    }
+    
+    .style-switcher .s-icon {
+        min-height: 48px;
+        min-width: 48px;
+    }
+}
+
+/* Tablet Responsiveness */
+@media only screen and (max-width: 991px) {
+    .style-switcher {
+        top: 80px;
+        width: 180px;
+        padding: 12px;
+    }
+    
+    .style-switcher.open {
+        transform: translateX(-15px);
+    }
+    
+    .style-switcher .s-icon {
+        height: 45px;
+        width: 45px;
+        font-size: 22px;
+        margin-right: 15px;
+    }
+    
+    .style-switcher .day-night {
+        top: 60px;
+    }
+    
+    .style-switcher h4 {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+    
+    .style-switcher .colors span {
+        height: 28px;
+        width: 28px;
+        margin: 3px;
+    }
+}
+
+/* Mobile Responsiveness */
+@media only screen and (max-width: 767px) {
+    .style-switcher {
+        top: 70px;
+        width: 160px;
+        padding: 10px;
+        border-radius: 8px 0 0 8px;
+    }
+    
+    .style-switcher.open {
+        transform: translateX(-10px);
+    }
+    
+    .style-switcher .s-icon {
+        height: 50px;
+        width: 50px;
+        font-size: 24px;
+        margin-right: 10px;
+    }
+    
+    .style-switcher .style-switcher-toggler {
+        top: 0;
+    }
+    
+    .style-switcher .day-night {
+        top: 65px;
+    }
+    
+    .style-switcher h4 {
+        font-size: 13px;
+        margin-bottom: 8px;
+    }
+    
+    .style-switcher .colors {
+        justify-content: center;
+        gap: 5px;
+    }
+    
+    .style-switcher .colors span {
+        height: 32px;
+        width: 32px;
+        margin: 3px;
+    }
+}
+
+/* Small Mobile Optimization */
+@media only screen and (max-width: 480px) {
+    .style-switcher {
+        top: 60px;
+        width: 140px;
+        padding: 10px 8px;
+    }
+    
+    .style-switcher.open {
+        transform: translateX(-5px);
+    }
+    
+    .style-switcher .s-icon {
+        height: 45px;
+        width: 45px;
+        font-size: 20px;
+        margin-right: 8px;
+    }
+    
+    .style-switcher .day-night {
+        top: 58px;
+    }
+    
+    .style-switcher h4 {
+        font-size: 12px;
+        margin-bottom: 6px;
+    }
+    
+    .style-switcher .colors span {
+        height: 26px;
+        width: 26px;
+        margin: 2px;
+    }
+}
+
+/* Landscape Mobile */
+@media only screen and (max-width: 767px) and (orientation: landscape) {
+    .style-switcher {
+        top: 10px;
+        width: 150px;
+        padding: 8px;
+    }
+    
+    .style-switcher .s-icon {
+        height: 40px;
+        width: 40px;
+        font-size: 18px;
+    }
+    
+    .style-switcher .day-night {
+        top: 50px;
+    }
+    
+    .style-switcher .colors span {
+        height: 24px;
+        width: 24px;
+        margin: 2px;
+    }
 }
 
