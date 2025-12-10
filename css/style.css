@@ -362,6 +362,9 @@ h3.my-profession{
     max-width:40%;
     text-align: center;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .home-img::after{
@@ -371,10 +374,11 @@ h3.my-profession{
     width:80px;
     border-bottom: 10px solid var(--skin-color);
     border-right: 10px solid var(--skin-color);
-    right: 20px;
-    bottom: 10px;
+    right: 10%;
+    bottom: 10%;
     border-radius: 0 0 20px 0;
     animation: borderPulse 3s ease-in-out infinite;
+    z-index: 1;
 }
 .home-img::before{
     content: '';
@@ -383,10 +387,11 @@ h3.my-profession{
     width:80px;
     border-top: 10px solid var(--skin-color);
     border-left: 10px solid var(--skin-color);
-    left: 15px;
-    top: -25px;
+    left: 10%;
+    top: 5%;
     border-radius: 20px 0 0 0;
     animation: borderPulse 3s ease-in-out infinite reverse;
+    z-index: 1;
 }
 
 @keyframes borderPulse {
@@ -400,6 +405,7 @@ h3.my-profession{
 
 .home .home-img img{
     margin: auto;
+    display: block;
     border-radius: 50%;
     height: 350px;
     width: 350px;
@@ -407,7 +413,7 @@ h3.my-profession{
     border: 8px solid var(--bg-black-100);
     box-shadow: 0 10px 40px rgba(48, 46, 77, 0.3);
     transition: all 0.5s ease;
-    animation: float 6s ease-in-out infinite;
+    animation: float 6s ease-in-out infinite, fadeIn 1s ease-out 0.5s forwards;
 }
 
 .home .home-img img:hover{
@@ -1344,12 +1350,10 @@ a {
 }
 
 /* Loading Animation for Images */
-.home-img img {
-    opacity: 0;
-    animation: fadeIn 1s ease-out 0.5s forwards;
-}
-
 @keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
     to {
         opacity: 1;
     }
@@ -1493,8 +1497,25 @@ h3.hello {
     }
     .home .home-img
     {
-        display: none;
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-top: 30px;
+        display: block;
     }
+    
+    .home .home-img img {
+        height: 280px;
+        width: 280px;
+        margin: 0 auto;
+    }
+    
+    .home-img::after,
+    .home-img::before {
+        height: 60px;
+        width: 60px;
+        border-width: 6px;
+    }
+    
     body {
         font-size: 16px; /* Base font size for the body */
         line-height: 1.5; /* Line spacing */
@@ -1563,6 +1584,20 @@ h3.hello {
     }
     .home .home-img
     {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-top: 30px;
+        display: block;
+    }
+    
+    .home .home-img img {
+        height: 250px;
+        width: 250px;
+        margin: 0 auto;
+    }
+    
+    .home-img::after,
+    .home-img::before {
         display: none;
     }
     body {
