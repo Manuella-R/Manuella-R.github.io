@@ -87,3 +87,101 @@ document.querySelectorAll('.service-item, .timeline-item, .leadership-item, .cer
     el.style.transition = 'all 0.6s ease-out';
     observer.observe(el);
 });
+
+// Scroll to Top Button
+const scrollToTopBtn = document.getElementById('scrollToTop');
+
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+        scrollToTopBtn.classList.add('show');
+    } else {
+        scrollToTopBtn.classList.remove('show');
+    }
+});
+
+scrollToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+// Add hover effect to skill bars
+document.querySelectorAll('.skill-item').forEach(item => {
+    item.addEventListener('mouseenter', function() {
+        const progressBar = this.querySelector('.progress-in');
+        if (progressBar) {
+            progressBar.style.animation = 'none';
+            setTimeout(() => {
+                progressBar.style.animation = '';
+            }, 10);
+        }
+    });
+});
+
+// Typing effect for tagline
+const tagline = document.querySelector('.tagline');
+if (tagline) {
+    const text = tagline.textContent;
+    tagline.textContent = '';
+    let i = 0;
+    
+    setTimeout(() => {
+        const typeWriter = setInterval(() => {
+            if (i < text.length) {
+                tagline.textContent += text.charAt(i);
+                i++;
+            } else {
+                clearInterval(typeWriter);
+            }
+        }, 50);
+    }, 2000);
+}
+
+// Add number counter animation for stats
+function animateCounter(element, target, duration) {
+    let current = 0;
+    const increment = target / (duration / 16);
+    
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            element.textContent = target;
+            clearInterval(timer);
+        } else {
+            element.textContent = Math.floor(current);
+        }
+    }, 16);
+}
+
+// Parallax effect for home image
+window.addEventListener('scroll', () => {
+    const homeImg = document.querySelector('.home-img img');
+    if (homeImg) {
+        const scrolled = window.pageYOffset;
+        const parallax = scrolled * 0.3;
+        homeImg.style.transform = `translateY(${parallax}px)`;
+    }
+});
+
+// Add ripple effect to buttons
+document.querySelectorAll('.btn').forEach(button => {
+    button.addEventListener('click', function(e) {
+        const ripple = document.createElement('span');
+        const rect = this.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        const x = e.clientX - rect.left - size / 2;
+        const y = e.clientY - rect.top - size / 2;
+        
+        ripple.style.width = ripple.style.height = size + 'px';
+        ripple.style.left = x + 'px';
+        ripple.style.top = y + 'px';
+        ripple.classList.add('ripple');
+        
+        this.appendChild(ripple);
+        
+        setTimeout(() => {
+            ripple.remove();
+        }, 600);
+    });
+});

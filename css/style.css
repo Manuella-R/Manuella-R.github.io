@@ -17,10 +17,10 @@ body.dark{
 }
 
 body{
-    
     line-height: 1.5;
     font-size: 16px;
-    font-family: 'Poppins' sans-serif;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
 }
 
 *{
@@ -44,7 +44,28 @@ ul{
     display: block;
     padding: 0 30px;
     opacity: 1;
+    position: relative;
+}
 
+/* Animated Background Pattern */
+.section::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 50%, transparent 0%, transparent 50%, var(--bg-black-50) 50.5%, transparent 51%),
+        radial-gradient(circle at 80% 80%, transparent 0%, transparent 50%, var(--bg-black-50) 50.5%, transparent 51%);
+    opacity: 0.1;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.section > .container{
+    position: relative;
+    z-index: 1;
 }
 
 .hidden{
@@ -89,10 +110,12 @@ ul{
     content: '';
     height: 8px;
     width:80px;
-    background-color: var(--skin-color);
+    background: linear-gradient(90deg, var(--skin-color), transparent);
     position: absolute;
     top:100%;
     left: 0;
+    border-radius: 4px;
+    animation: slideIn 0.8s ease-out;
 }
 
 .section-title h2::after{
@@ -104,7 +127,19 @@ ul{
     top:100%;
     left: 0;
     margin-top: 8px;
+    border-radius: 2px;
+    animation: slideIn 1s ease-out;
+}
 
+@keyframes slideIn {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+    to {
+        width: 80px;
+        opacity: 1;
+    }
 }
 
 .row{
@@ -124,16 +159,41 @@ ul{
     display: inline-block;
     white-space: nowrap;
     border: none;
-    background: var(--skin-color);
+    background: linear-gradient(135deg, var(--skin-color), #d63384);
     transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(236, 9, 130, 0.2);
+}
+
+.btn::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.2), transparent);
+    transition: all 0.4s ease;
+}
+
+.btn:hover::before{
+    left: 100%;
 }
 
 .btn:hover{
-    transform: scale(1.05);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(236, 9, 130, 0.4);
 }
 
 .shadow-dark{
-    box-shadow: 0 0 20px rgba(48, 46, 77, 0.15)
+    box-shadow: 0 5px 25px rgba(48, 46, 77, 0.15);
+    transition: all 0.3s ease;
+}
+
+.shadow-dark:hover{
+    box-shadow: 0 10px 35px rgba(48, 46, 77, 0.25);
+    transform: translateY(-5px);
 }
 
 .aside{
@@ -313,6 +373,8 @@ h3.my-profession{
     border-right: 10px solid var(--skin-color);
     right: 20px;
     bottom: 10px;
+    border-radius: 0 0 20px 0;
+    animation: borderPulse 3s ease-in-out infinite;
 }
 .home-img::before{
     content: '';
@@ -323,12 +385,43 @@ h3.my-profession{
     border-left: 10px solid var(--skin-color);
     left: 15px;
     top: -25px;
+    border-radius: 20px 0 0 0;
+    animation: borderPulse 3s ease-in-out infinite reverse;
+}
+
+@keyframes borderPulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
 }
 
 .home .home-img img{
     margin: auto;
-    border-radius: 5px;
-    height: 300px;
+    border-radius: 50%;
+    height: 350px;
+    width: 350px;
+    object-fit: cover;
+    border: 8px solid var(--bg-black-100);
+    box-shadow: 0 10px 40px rgba(48, 46, 77, 0.3);
+    transition: all 0.5s ease;
+    animation: float 6s ease-in-out infinite;
+}
+
+.home .home-img img:hover{
+    transform: scale(1.05);
+    box-shadow: 0 15px 50px rgba(236, 9, 130, 0.3);
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
 }
 .about .about-content{
     flex:0 0 100%;
@@ -416,7 +509,7 @@ h3.my-profession{
     border-radius: 4px;
     width: 100%;
     position: relative;
-    
+    overflow: hidden;
 }
 
 .about .about-content .skills .skill-item .progress .progress-in{
@@ -425,7 +518,15 @@ h3.my-profession{
     top: 0;
     height: 100%;
     border-radius: 4px;
-    background-color: var(--skin-color);
+    background: linear-gradient(90deg, var(--skin-color), #d63384);
+    animation: fillBar 1.5s ease-out;
+    box-shadow: 0 0 10px var(--skin-color);
+}
+
+@keyframes fillBar {
+    from {
+        width: 0 !important;
+    }
 }
 
 .about .about-content .skills .skill-item .skill-percent{
@@ -535,39 +636,78 @@ h3.my-profession{
 .service .service-item .service-item-inner{
     background-color: var(--bg-black-100);
     border: 1px solid var(--bg-black-50);
-    border-radius: 10px;
+    border-radius: 15px;
     padding: 30px 15px;
     text-align: center; 
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.service .service-item .service-item-inner::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(236, 9, 130, 0.1), transparent);
+    transition: all 0.5s ease;
+}
+
+.service .service-item .service-item-inner:hover::before{
+    left: 100%;
 }
 
 .service .service-item .service-item-inner:hover{
-    box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+    box-shadow: 0 10px 40px rgba(236, 9, 130, 0.2);
+    transform: translateY(-10px);
+    border-color: var(--skin-color);
 }
 
 .service .service-item .service-item-inner .icon{
-    height: 60px;
-    width: 60px;
+    height: 80px;
+    width: 80px;
     border-radius: 50%;
     display: block;
     margin: 0 auto 30px;
     text-align: center;
-    transition: all 0.8s ease;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    background: linear-gradient(135deg, var(--skin-color), #d63384);
+    box-shadow: 0 5px 20px rgba(236, 9, 130, 0.3);
+    position: relative;
+}
+
+.service .service-item .service-item-inner .icon::after{
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 50%;
+    border: 2px solid var(--skin-color);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.service .service-item .service-item-inner:hover .icon::after{
+    opacity: 1;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
 }
 
 .service .service-item .service-item-inner .icon .fa{
-    font-size: 40px;
-    line-height: 60px;
-    color: var(--skin-color);
+    font-size: 35px;
+    line-height: 80px;
+    color: white;
 }
 
 .service .service-item .service-item-inner:hover .icon{
-    background: var(--skin-color);
-}
-
-.service .service-item .service-item-inner:hover .icon .fa{
-    font-size: 25px;
-    color: #f2f2fc;
+    transform: rotateY(360deg) scale(1.1);
+    box-shadow: 0 10px 30px rgba(236, 9, 130, 0.5);
 }
 
 .service .service-item .service-item-inner h4{
@@ -719,11 +859,18 @@ h3.my-profession{
     background: transparent;
     border: 2px solid var(--skin-color);
     color: var(--skin-color);
+    box-shadow: none;
+}
+
+.home .download-cv::before{
+    background: linear-gradient(135deg, var(--skin-color), #d63384);
 }
 
 .home .download-cv:hover{
-    background: var(--skin-color);
+    background: linear-gradient(135deg, var(--skin-color), #d63384);
     color: white;
+    border-color: transparent;
+    box-shadow: 0 6px 20px rgba(236, 9, 130, 0.4);
 }
 
 .home .social-links{
@@ -933,19 +1080,44 @@ h3.my-profession{
     padding: 20px;
     background-color: var(--bg-black-100);
     border: 1px solid var(--bg-black-50);
+    border-left: 4px solid var(--skin-color);
     border-radius: 10px;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.certifications .cert-item::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 0;
+    background: linear-gradient(180deg, var(--skin-color), #d63384);
+    transition: all 0.4s ease;
+}
+
+.certifications .cert-item:hover::before{
+    height: 100%;
 }
 
 .certifications .cert-item:hover{
-    box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+    box-shadow: 0 5px 30px rgba(236, 9, 130, 0.2);
     transform: translateX(10px);
+    background: linear-gradient(90deg, var(--bg-black-100), var(--bg-black-50));
 }
 
 .certifications .cert-item .fa{
     font-size: 30px;
     color: var(--skin-color);
     margin-top: 5px;
+    transition: all 0.3s ease;
+}
+
+.certifications .cert-item:hover .fa{
+    transform: rotate(360deg) scale(1.2);
+    color: #d63384;
 }
 
 .certifications .cert-info h4{
@@ -977,6 +1149,275 @@ h3.my-profession{
 .nav-toggler.open span::after{
     transform: rotate(-45deg);
     top: 0;
+}
+
+/* Scroll to Top Button */
+.scroll-to-top{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--skin-color), #d63384);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0 5px 20px rgba(236, 9, 130, 0.4);
+}
+
+.scroll-to-top.show{
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-to-top:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(236, 9, 130, 0.6);
+}
+
+.scroll-to-top:active{
+    transform: scale(0.9);
+}
+
+/* Enhanced Info Items */
+.about .about-content .personal-info .info-item{
+    transition: all 0.3s ease;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.about .about-content .personal-info .info-item:hover{
+    background-color: var(--bg-black-50);
+    transform: translateX(5px);
+}
+
+/* Contact Form Enhancements */
+.contact .contact-form .form-item .form-control::placeholder{
+    color: var(--text-black-700);
+    opacity: 0.6;
+}
+
+/* Timeline Enhancements */
+.about .about-content .timeline,
+.experience-section .timeline{
+    position: relative;
+}
+
+.about .about-content .timeline:hover,
+.experience-section .timeline:hover{
+    transform: translateY(-3px);
+}
+
+/* Leadership Item Enhancements */
+.leadership .leadership-item-inner .leadership-text strong{
+    color: var(--skin-color);
+    font-size: 16px;
+}
+
+/* Page Load Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.home-info,
+.home-img {
+    animation: fadeInUp 1s ease-out;
+}
+
+.home-img {
+    animation-delay: 0.3s;
+}
+
+/* Section Title Animation */
+.section-title {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Improved Skill Item Spacing */
+.about .about-content .skills .skill-item{
+    margin-bottom: 25px;
+}
+
+/* Better Link Styling */
+a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Enhanced Timeline Title */
+.about .about-content .timeline .timeline-title,
+.experience-section .timeline-title{
+    position: relative;
+    display: inline-block;
+}
+
+.about .about-content .timeline .timeline-title::after,
+.experience-section .timeline-title::after{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--skin-color);
+    transition: width 0.3s ease;
+}
+
+.about .about-content .timeline-item:hover .timeline-title::after,
+.experience-section .timeline-item:hover .timeline-title::after{
+    width: 100%;
+}
+
+/* Button Ripple Effect */
+.btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn .ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.6);
+    transform: scale(0);
+    animation: ripple-animation 0.6s ease-out;
+    pointer-events: none;
+}
+
+@keyframes ripple-animation {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* Gradient Text */
+.home .hello .name{
+    background: linear-gradient(135deg, var(--skin-color), #d63384);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Enhanced Card Styles */
+.service-item-inner,
+.timeline,
+.leadership-item-inner,
+.cert-item {
+    backdrop-filter: blur(10px);
+}
+
+/* Loading Animation for Images */
+.home-img img {
+    opacity: 0;
+    animation: fadeIn 1s ease-out 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Glowing Effect on Hover */
+.service-item-inner:hover,
+.leadership-item-inner:hover {
+    position: relative;
+}
+
+.service-item-inner:hover::after,
+.leadership-item-inner:hover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 15px;
+    box-shadow: inset 0 0 20px rgba(236, 9, 130, 0.2);
+    pointer-events: none;
+}
+
+/* Smooth Section Transitions */
+.section {
+    opacity: 0;
+    animation: sectionFadeIn 0.8s ease-out forwards;
+}
+
+@keyframes sectionFadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Professional Info Item Icons */
+.info-item p::before {
+    margin-right: 5px;
+}
+
+/* Enhanced Social Links */
+.home .social-links a {
+    position: relative;
+    overflow: hidden;
+}
+
+.home .social-links a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: var(--skin-color);
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+
+.home .social-links a:hover::before {
+    width: 100%;
+    height: 100%;
+}
+
+/* Better Spacing */
+.section-title {
+    margin-bottom: 70px;
+}
+
+/* Improved Typography */
+h3.hello {
+    font-weight: 600;
+}
+
+.my-profession {
+    font-weight: 700;
+}
+
+/* Status Badge Style */
+.info-item p span {
+    padding: 2px 8px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.info-item:hover p span {
+    background: var(--bg-black-50);
 }
 @media(max-width:1199px){
     .aside{
