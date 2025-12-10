@@ -405,15 +405,18 @@ h3.my-profession{
 
 .home .home-img img{
     margin: auto;
-    display: block;
+    display: block !important;
     border-radius: 50%;
     height: 350px;
     width: 350px;
+    max-width: 100%;
     object-fit: cover;
     border: 8px solid var(--bg-black-100);
     box-shadow: 0 10px 40px rgba(48, 46, 77, 0.3);
     transition: all 0.5s ease;
-    animation: float 6s ease-in-out infinite, fadeIn 1s ease-out 0.5s forwards;
+    animation: float 6s ease-in-out infinite;
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 .home .home-img img:hover{
@@ -1380,11 +1383,13 @@ a {
 
 /* Smooth Section Transitions */
 .section {
-    opacity: 0;
-    animation: sectionFadeIn 0.8s ease-out forwards;
+    opacity: 1;
 }
 
 @keyframes sectionFadeIn {
+    from {
+        opacity: 0;
+    }
     to {
         opacity: 1;
     }

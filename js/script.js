@@ -80,13 +80,34 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe all service items, timeline items, etc.
+// Observe all service items, timeline items, etc. (excluding home section)
 document.querySelectorAll('.service-item, .timeline-item, .leadership-item, .cert-category').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
     el.style.transition = 'all 0.6s ease-out';
     observer.observe(el);
 });
+
+// Ensure home image is always visible
+const homeImg = document.querySelector('.home-img img');
+if (homeImg) {
+    homeImg.style.opacity = '1';
+    homeImg.style.visibility = 'visible';
+    homeImg.style.display = 'block';
+    
+    // Add error handler
+    homeImg.onerror = function() {
+        console.error('Error loading image:', this.src);
+        this.style.border = '3px solid red';
+        this.alt = 'Image failed to load: ' + this.src;
+    };
+    
+    // Add load handler
+    homeImg.onload = function() {
+        console.log('Image loaded successfully:', this.src);
+        this.style.opacity = '1';
+    };
+}
 
 // Scroll to Top Button
 const scrollToTopBtn = document.getElementById('scrollToTop');

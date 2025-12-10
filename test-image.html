@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f0f0f0;
+        }
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #ec0982;
+        }
+        .image-box {
+            margin: 20px 0;
+            padding: 20px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px auto;
+            border: 3px solid #ec0982;
+            border-radius: 10px;
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🖼️ Portfolio Image Test</h1>
+        
+        <div class="status info">
+            <strong>Testing image path:</strong> <code>images/Rehema.jpg</code>
+        </div>
+
+        <div class="image-box">
+            <h2>Test 1: Direct Image Load</h2>
+            <img src="images/Rehema.jpg" alt="Rehema Profile" id="test-img-1">
+            <p id="status-1" class="status"></p>
+        </div>
+
+        <div class="image-box">
+            <h2>Test 2: Absolute Path</h2>
+            <img src="/images/Rehema.jpg" alt="Rehema Profile" id="test-img-2">
+            <p id="status-2" class="status"></p>
+        </div>
+
+        <div class="image-box">
+            <h2>Test 3: Circular Style (Portfolio Style)</h2>
+            <img src="images/Rehema.jpg" alt="Rehema Profile" id="test-img-3" 
+                 style="width: 300px; height: 300px; border-radius: 50%; object-fit: cover;">
+            <p id="status-3" class="status"></p>
+        </div>
+
+        <div class="image-box">
+            <h2>File Information</h2>
+            <ul>
+                <li><strong>Expected path:</strong> /workspace/images/Rehema.jpg</li>
+                <li><strong>File type:</strong> JPEG</li>
+                <li><strong>File size:</strong> ~81KB</li>
+                <li><strong>Dimensions:</strong> 769×1024px</li>
+            </ul>
+        </div>
+
+        <div id="browser-info" class="status info">
+            <h3>Browser Information:</h3>
+            <p><strong>User Agent:</strong> <span id="user-agent"></span></p>
+            <p><strong>Current URL:</strong> <span id="current-url"></span></p>
+        </div>
+    </div>
+
+    <script>
+        // Test image 1
+        const img1 = document.getElementById('test-img-1');
+        const status1 = document.getElementById('status-1');
+        
+        img1.onload = function() {
+            status1.className = 'status success';
+            status1.textContent = '✅ Image loaded successfully! Path: images/Rehema.jpg';
+            console.log('Image 1 loaded:', this.naturalWidth, 'x', this.naturalHeight);
+        };
+        
+        img1.onerror = function() {
+            status1.className = 'status error';
+            status1.textContent = '❌ Failed to load image from: images/Rehema.jpg';
+            console.error('Image 1 failed to load');
+        };
+
+        // Test image 2
+        const img2 = document.getElementById('test-img-2');
+        const status2 = document.getElementById('status-2');
+        
+        img2.onload = function() {
+            status2.className = 'status success';
+            status2.textContent = '✅ Image loaded successfully! Path: /images/Rehema.jpg';
+        };
+        
+        img2.onerror = function() {
+            status2.className = 'status error';
+            status2.textContent = '❌ Failed to load image from: /images/Rehema.jpg';
+        };
+
+        // Test image 3
+        const img3 = document.getElementById('test-img-3');
+        const status3 = document.getElementById('status-3');
+        
+        img3.onload = function() {
+            status3.className = 'status success';
+            status3.textContent = '✅ Circular image loaded successfully! This is how it appears in your portfolio.';
+        };
+        
+        img3.onerror = function() {
+            status3.className = 'status error';
+            status3.textContent = '❌ Failed to load circular image.';
+        };
+
+        // Browser info
+        document.getElementById('user-agent').textContent = navigator.userAgent;
+        document.getElementById('current-url').textContent = window.location.href;
+    </script>
+</body>
+</html>
