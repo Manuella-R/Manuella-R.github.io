@@ -457,20 +457,20 @@ h3.my-profession{
 }
 
 .about .about-content .personal-info{
-    flex: 0 0 50%;
-    max-width: 60%;
+    flex: 0 0 100%;
+    max-width: 100%;
     margin-top: 40px;
 }
 
 .about .about-content .personal-info .info-item{
-    flex: 0 0 50%;
-    max-width: 50%;
+    flex: 0 0 100%;
+    max-width: 100%;
     
 }
 
 .about .about-content .personal-info .info-item p{
     font-weight: 600;
-    padding: 10px 0;
+    padding: 14px 0;
     font-size: 16px;
     color: var(--text-black-900);
     border-bottom: 1px solid var(--bg-black-50);
@@ -479,8 +479,13 @@ h3.my-profession{
 .about .about-content .personal-info .info-item p span{
     font-weight: 400;
     color: var(--text-black-700);
-    margin-left: 4px;
+    margin-left: 8px;
     display: inline-block;
+}
+
+#education .service-item{
+    flex: 0 0 100%;
+    max-width: 100%;
 }
 
 .about .about-content .personal-info .buttons{
@@ -731,6 +736,67 @@ h3.my-profession{
     font-size: 16px;
     color: var(--text-black-700);
     line-height: 25px;
+}
+
+.service .service-item .service-item-inner.expertise-card{
+    cursor: pointer;
+}
+
+.service .service-item .service-item-inner.expertise-card:focus-visible{
+    outline: 2px solid var(--skin-color);
+    outline-offset: 3px;
+}
+
+.expertise-details{
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: max-height 0.35s ease, opacity 0.35s ease, transform 0.35s ease, margin-top 0.35s ease;
+    margin-top: 0;
+    text-align: left;
+}
+
+.service .service-item .service-item-inner.expertise-card.expanded .expertise-details{
+    max-height: 420px;
+    opacity: 1;
+    transform: translateY(0);
+    margin-top: 14px;
+}
+
+.expertise-skill{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 8px 12px;
+    margin-bottom: 12px;
+    align-items: center;
+}
+
+.expertise-skill span{
+    font-size: 14px;
+    color: var(--text-black-900);
+}
+
+.expertise-progress{
+    grid-column: 1 / span 2;
+    width: 100%;
+    height: 8px;
+    border-radius: 8px;
+    background-color: var(--bg-black-50);
+    overflow: hidden;
+}
+
+.expertise-progress-in{
+    width: 0;
+    height: 100%;
+    border-radius: 8px;
+    background: linear-gradient(90deg, var(--skin-color), #d63384);
+    transition: width 0.8s ease;
+}
+
+.expertise-percent{
+    font-weight: 700;
+    color: var(--skin-color);
 }
 
 .portfolio .container{
@@ -1094,6 +1160,7 @@ h3.my-profession{
     transition: all 0.4s ease;
     position: relative;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .certifications .cert-item::before{
@@ -1115,6 +1182,11 @@ h3.my-profession{
     box-shadow: 0 5px 30px rgba(236, 9, 130, 0.2);
     transform: translateX(10px);
     background: linear-gradient(90deg, var(--bg-black-100), var(--bg-black-50));
+}
+
+.certifications .cert-item:focus-visible{
+    outline: 2px solid var(--skin-color);
+    outline-offset: 2px;
 }
 
 .certifications .cert-item .fa{
@@ -1139,6 +1211,17 @@ h3.my-profession{
 .certifications .cert-info p{
     font-size: 14px;
     color: var(--text-black-700);
+}
+
+.certifications .cert-extra{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, margin-top 0.3s ease;
+}
+
+.certifications .cert-item.expanded .cert-extra{
+    max-height: 150px;
+    margin-top: 8px;
 }
 
 /* Mobile Menu Toggle */

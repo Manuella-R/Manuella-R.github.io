@@ -127,15 +127,54 @@ scrollToTopBtn.addEventListener('click', () => {
     });
 });
 
-// Add hover effect to skill bars
-document.querySelectorAll('.skill-item').forEach(item => {
-    item.addEventListener('mouseenter', function() {
-        const progressBar = this.querySelector('.progress-in');
-        if (progressBar) {
-            progressBar.style.animation = 'none';
-            setTimeout(() => {
-                progressBar.style.animation = '';
-            }, 10);
+// Expandable expertise cards with animated progress bars
+document.querySelectorAll('.expertise-card').forEach(card => {
+    const bars = card.querySelectorAll('.expertise-progress-in');
+
+    const animateBars = () => {
+        bars.forEach((bar) => {
+            const width = bar.getAttribute('data-width') || '0';
+            bar.style.width = width + '%';
+        });
+    };
+
+    const resetBars = () => {
+        bars.forEach((bar) => {
+            bar.style.width = '0%';
+        });
+    };
+
+    const toggleCard = () => {
+        const isExpanded = card.classList.toggle('expanded');
+        card.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+        if (isExpanded) {
+            animateBars();
+        } else {
+            resetBars();
+        }
+    };
+
+    card.addEventListener('click', toggleCard);
+    card.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            toggleCard();
+        }
+    });
+});
+
+// Expandable certification cards
+document.querySelectorAll('.cert-item').forEach(card => {
+    const toggleCard = () => {
+        card.classList.toggle('expanded');
+        card.setAttribute('aria-expanded', card.classList.contains('expanded') ? 'true' : 'false');
+    };
+
+    card.addEventListener('click', toggleCard);
+    card.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            toggleCard();
         }
     });
 });
