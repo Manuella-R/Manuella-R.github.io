@@ -1,591 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Rehema Manuella Wanjiru - Software Developer | AI/ML Enthusiast | Future Innovator">
-        <meta name="keywords" content="Software Developer, AI, Machine Learning, Python, Java, Web Development, Nairobi, Kenya">
-        <meta name="author" content="Rehema Manuella Wanjiru">
-        <title>Rehema Manuella Wanjiru | Software Developer & AI Enthusiast</title>
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/skins/color-1.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-        
-        
-        <link rel="stylesheet" href="css/skins/color-1.css" class="alternate-style" title="color-1" disabled>
-        <link rel="stylesheet" href="css/skins/color-2.css" class="alternate-style" title="color-2" disabled>
-        <link rel="stylesheet" href="css/skins/color-3.css" class="alternate-style" title="color-3" disabled>
-        <link rel="stylesheet" href="css/skins/color-4.css" class="alternate-style" title="color-4" disabled>
-        <link rel="stylesheet" href="css/skins/color-5.css" class="alternate-style" title="color-5" disabled>
-        <link rel="stylesheet" href="css/style-switcher.css">
-    </head>
-    <body>
-        <div class="main-container">
-         
-            <div class="aside">
-                <div class="logo">
-                    <a href="#"><span>R</span>ehema</a>
-                </div>
-                <div class="nav-toggler">
-                    <span> </span>
-                </div>
-                <ul class="nav">
-                    <li><a href="#home" class="active"><i class="fa fa-home"></i>Home</a></li>
-                    <li><a href="#about"><i class="fa fa-user"></i>About</a></li>
-                    <li><a href="#service"><i class="fa fa-cogs"></i>Skills</a></li>
-                    <li><a href="#portfolio"><i class="fa fa-laptop-code"></i>Projects</a></li>
-                    <li><a href="#leadership"><i class="fa fa-users"></i>Leadership</a></li>
-                    <li><a href="#certifications"><i class="fa fa-certificate"></i>Certifications</a></li>
-                    <li><a href="#referees"><i class="fa fa-address-book"></i>Referees</a></li>
-                    <li><a href="#contact"><i class="fa fa-envelope"></i>Contact</a></li>
-                </ul>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Admin | Rehema Manuella Wanjiru</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="admin.css">
+    <script>
+        // Match the theme chosen on the main site.
+        if (localStorage.getItem('darkMode') === 'true') document.documentElement.classList.add('dark');
+    </script>
+</head>
+<body>
+
+    <!-- ===================== LOGIN ===================== -->
+    <div id="login" class="login-screen">
+        <div class="login-card">
+            <div class="brand"><span>R</span>ehema <small>Admin</small></div>
+
+            <div class="field">
+                <label for="branch">Branch to edit</label>
+                <input id="branch" type="text" value="main" autocomplete="off" spellcheck="false">
+                <p class="hint">Use <code>main</code> for the live site. Use <code>claude</code> to test before merging.</p>
             </div>
-            <div class="main-content">
-                <section class="home section" id="home">
-                    <div class="container">
-                        <div class="row">
-                           <div class="home-info padd-15">
-                            <h3 class="hello">Hello! My name is <span class="name"> Rehema Manuella Wanjiru </span></h3>
-                            <h3 class="my-profession">I'm a <span class="typing">Software Developer | AI Researcher</span></h3>
-                            <h4 class="tagline">Future Innovator</h4>
-                            <p>Innovative Software Developer and researcher with Second Class Honors (Upper Division) in Computer Science. Proven in building robust AI solutions, including digital security and media bias detection models, while combining strong technical execution with leadership and community impact.</p>
-                            <div class="home-buttons">
-                                <a href="#contact" class="btn hire-me">Hire Me</a>
-                                <a href="cv/Rehema.pdf" class="btn download-cv" download><i class="fa fa-download"></i> Download CV</a>
-                            </div>
-                            <div class="social-links">
-                                <a href="https://www.linkedin.com/in/rehema-kuria-67967a2a4" target="_blank"><i class="fab fa-linkedin"></i></a>
-                                <a href="https://github.com/Manuella-R" target="_blank"><i class="fab fa-github"></i></a>
-                                <a href="mailto:rehemamanuella@gmail.com"><i class="fa fa-envelope"></i></a>
-                                <a href="tel:+254798298573"><i class="fa fa-phone"></i></a>
-                            </div>
-                           </div> 
-                           <div class="home-img padd-15">
-                            <img src="images/Rehema.jpg" alt="Rehema Manuella Wanjiru" style="display: block !important; opacity: 1 !important; visibility: visible !important; max-width: 100%;">
-                           </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="about section" id="about">
-                    <div class="container">
-                        <div class="row">
-                            <div class="section-title padd-15">
-                                <h2>About Me</h2>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="about-content padd-15">
-                                <div class="row">
-                                    <div class="about-text padd-15">
-                                        <h3>
-                                         I'm Rehema Manuella Wanjiru and I am a <span>Software Developer</span>.<br></h3>
 
-                                            <p>Innovative Software Developer and AI researcher based in Nairobi, Kenya. I hold a strong academic and practical foundation in Computer Science, with focused experience in AI model development, digital security systems, and software engineering.<br>
-                                            <br>I build practical solutions that bridge advanced technology and real-world impact, including bias detection, resilient tracking systems, and intelligent scheduling tools.<br>
-                                            <br>Beyond technical delivery, I bring leadership experience from serving as President of the Strathmore Japanese Club and volunteering with the Embassy of Japan in Kenya, where I have helped connect technology, culture, and community engagement.<br></p>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="personal-info padd-15">
-                                        <div class="row">
-                                            <div class="info-item padd-15">
-                                                <P>
-                                                   Email : <span> rehemamanuella@gmail.com</span>
-                                                </P>
-                                            </div>
-                                            <div class="info-item padd-15">
-                                                <P>
-                                                   Phone : <span> +254 798 298 573</span>
-                                                </P>
-                                            </div>
-                                            
-                                            <div class="info-item padd-15">
-                                                <P>
-                                                   City : <span> Nairobi, Kenya</span>
-                                                </P>
-                                            </div>
-                                            <div class="info-item padd-15">
-                                                <P>
-                                                   Degree : <span> B.Sc. Computer Science & Informatics</span>
-                                                </P>
-                                            </div>
-                                            <div class="info-item padd-15">
-                                                <P>
-                                                   Freelance : <span> Available</span>
-                                                </P>
-                                            </div>
-                                            <div class="info-item padd-15">
-                                                <P>
-                                                   LinkedIn : <span><a href="https://www.linkedin.com/in/rehema-kuria-67967a2a4" target="_blank" style="color: var(--skin-color);">Profile</a></span>
-                                                </P>
-                                            </div>
-                                            <div class="info-item padd-15">
-                                                <P>
-                                                   GitHub : <span><a href="https://github.com/Manuella-R" target="_blank" style="color: var(--skin-color);">Manuella-R</a></span>
-                                                </P>
-                                            </div>
-                                            <div class="info-item padd-15">
-                                                <P>
-                                                   Languages : <span> English (Native), Japanese</span>
-                                                </P>
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="service section" id="education">
-                    <div class="container">
-                        <div class="row">
-                            <div class="section-title padd-15">
-                                <h2>Education</h2>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="service-item padd-15">
-                                <div class="service-item-inner education-card">
-                                    <div class="icon">
-                                        <i class="fa fa-graduation-cap"></i>
-                                    </div>
-                                    <h4>Strathmore University</h4>
-                                    <p><strong>Expected August 2026</strong><br>Bachelor of Science in Computer Science & Informatics<br>Second Class Honors (Upper Division)<br>Relevant coursework: AI, Machine Learning, Data Structures, Algorithms, Software Development</p>
-                                </div>
-                            </div>
-                            <div class="service-item padd-15">
-                                <div class="service-item-inner education-card">
-                                    <div class="icon">
-                                        <i class="fa fa-school"></i>
-                                    </div>
-                                    <h4>Pioneer Girls' High School</h4>
-                                    <p><strong>2017 - 2021</strong><br>Completed KCSE Exams with a mean grade of <strong>A-</strong>.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                
-                <section class="service section" id="service">
-                    <div class="container">
-                        <div class="row">
-                            <div class="section-title padd-15">
-                                <h2>Technical Expertise</h2>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="service-item padd-15">
-                            <div class="service-item-inner expertise-card" role="button" tabindex="0" aria-expanded="false">
-                                <div class="icon">
-                                    <i class="fa fa-brain"></i>
-                                </div>
-                                <h4>Machine Learning</h4>
-                                <p>Click to view skill levels</p>
-                                <div class="expertise-details">
-                                    <div class="expertise-skill"><span>Scikit-learn</span><div class="expertise-progress"><div class="expertise-progress-in" data-width="88"></div></div><span class="expertise-percent">88%</span></div>
-                                    <div class="expertise-skill"><span>TensorFlow</span><div class="expertise-progress"><div class="expertise-progress-in" data-width="85"></div></div><span class="expertise-percent">85%</span></div>
-                                    <div class="expertise-skill"><span>Prompt Engineering</span><div class="expertise-progress"><div class="expertise-progress-in" data-width="90"></div></div><span class="expertise-percent">90%</span></div>
-                                    <div class="expertise-skill"><span>Python</span><div class="expertise-progress"><div class="expertise-progress-in" data-width="92"></div></div><span class="expertise-percent">92%</span></div>
-                                    <div class="expertise-skill"><span>Computer Vision</span><div class="expertise-progress"><div class="expertise-progress-in" data-width="86"></div></div><span class="expertise-percent">86%</span></div>
-                                </div>
-                            </div>
-                           </div> 
-                           <div class="service-item padd-15">
-                            <div class="service-item-inner expertise-card" role="button" tabindex="0" aria-expanded="false">
-                                <div class="icon">
-                                    <i class="fa fa-code"></i>
-                                </div>
-                                <h4>Web Development</h4>
-                                <p>Click to view skill levels</p>
-                                <div class="expertise-details">
-                                    <div class="expertise-skill"><span>React</span><div class="expertise-progress"><div class="expertise-progress-in" data-width="87"></div></div><span class="expertise-percent">87%</span></div>
-                                    <div class="expertise-skill"><span>Laravel</span><div class="expertise-progress"><div class="expertise-progress-in" data-width="82"></div></div><span class="expertise-percent">82%</span></div>
-                                    <div class="expertise-skill"><span>HTML / CSS</span><div class="expertise-progress"><div class="expertise-progress-in" data-width="91"></div></div><span class="expertise-percent">91%</span></div>
-                                    <div class="expertise-skill"><span>JavaScript</span><div class="expertise-progress"><div class="expertise-progress-in" data-width="88"></div></div><span class="expertise-percent">88%</span></div>
-                                    <div class="expertise-skill"><span>SQL</span><div class="expertise-progress"><div class="expertise-progress-in" data-width="84"></div></div><span class="expertise-percent">84%</span></div>
-                                </div>
-                            </div>
-                           </div> 
-                           <div class="service-item padd-15">
-                            <div class="service-item-inner expertise-card" role="button" tabindex="0" aria-expanded="false">
-                                <div class="icon">
-                                    <i class="fa fa-shield-alt"></i>
-                                </div>
-                                <h4>Cybersecurity</h4>
-                                <p>Click to view skill levels</p>
-                                <div class="expertise-details">
-                                    <div class="expertise-skill"><span>Digital Forensics</span><div class="expertise-progress"><div class="expertise-progress-in" data-width="81"></div></div><span class="expertise-percent">81%</span></div>
-                                    <div class="expertise-skill"><span>Ethical Hacking</span><div class="expertise-progress"><div class="expertise-progress-in" data-width="83"></div></div><span class="expertise-percent">83%</span></div>
-                                </div>
-                            </div>
-                           </div> 
-                           <div class="service-item padd-15">
-                            <div class="service-item-inner expertise-card" role="button" tabindex="0" aria-expanded="false">
-                                <div class="icon">
-                                    <i class="fa fa-mobile-alt"></i>
-                                </div>
-                                <h4>App Development</h4>
-                                <p>Click to view skill levels</p>
-                                <div class="expertise-details">
-                                    <div class="expertise-skill"><span>Kotlin</span><div class="expertise-progress"><div class="expertise-progress-in" data-width="82"></div></div><span class="expertise-percent">82%</span></div>
-                                    <div class="expertise-skill"><span>Java</span><div class="expertise-progress"><div class="expertise-progress-in" data-width="90"></div></div><span class="expertise-percent">90%</span></div>
-                                </div>
-                            </div>
-                           </div> 
-                           <div class="service-item padd-15">
-                            <div class="service-item-inner expertise-card" role="button" tabindex="0" aria-expanded="false">
-                                <div class="icon">
-                                    <i class="fa fa-code-branch"></i>
-                                </div>
-                                <h4>Software & Collaboration</h4>
-                                <p>Click to view skill levels</p>
-                                <div class="expertise-details">
-                                    <div class="expertise-skill"><span>Git</span><div class="expertise-progress"><div class="expertise-progress-in" data-width="89"></div></div><span class="expertise-percent">89%</span></div>
-                                </div>
-                            </div>
-                           </div> 
-                           <div class="service-item padd-15">
-                            <div class="service-item-inner expertise-card" role="button" tabindex="0" aria-expanded="false">
-                                <div class="icon">
-                                    <i class="fa fa-microscope"></i>
-                                </div>
-                                <h4>Research</h4>
-                                <p>Click to view skill levels</p>
-                                <div class="expertise-details">
-                                    <div class="expertise-skill"><span>AI Experimentation</span><div class="expertise-progress"><div class="expertise-progress-in" data-width="88"></div></div><span class="expertise-percent">88%</span></div>
-                                    <div class="expertise-skill"><span>Model Validation</span><div class="expertise-progress"><div class="expertise-progress-in" data-width="87"></div></div><span class="expertise-percent">87%</span></div>
-                                </div>
-                            </div>
-                           </div>
-                           <div class="service-item padd-15">
-                            <div class="service-item-inner expertise-card" role="button" tabindex="0" aria-expanded="false">
-                                <div class="icon">
-                                    <i class="fa fa-users"></i>
-                                </div>
-                                <h4>Leadership</h4>
-                                <p>Click to view skill levels</p>
-                                <div class="expertise-details">
-                                    <div class="expertise-skill"><span>Team Coordination</span><div class="expertise-progress"><div class="expertise-progress-in" data-width="92"></div></div><span class="expertise-percent">92%</span></div>
-                                    <div class="expertise-skill"><span>Stakeholder Communication</span><div class="expertise-progress"><div class="expertise-progress-in" data-width="90"></div></div><span class="expertise-percent">90%</span></div>
-                                </div>
-                            </div>
-                           </div> 
-                        </div>
-                    </div>
+            <!-- First time on this device -->
+            <form id="setupForm" autocomplete="off">
+                <h2>Connect this device</h2>
+                <p class="hint">One-time setup. Your GitHub token is encrypted with the passcode you choose and stored only in this browser.</p>
 
-                </section>
+                <div class="field">
+                    <label for="token">GitHub access token</label>
+                    <div class="with-btn">
+                        <input id="token" type="password" placeholder="github_pat_..." autocomplete="off" spellcheck="false" required>
+                        <button type="button" class="icon-btn" data-toggle="token" title="Show / hide"><i class="fa fa-eye"></i></button>
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="newPass">Choose a passcode (8+ characters)</label>
+                    <div class="with-btn">
+                        <input id="newPass" type="password" minlength="8" autocomplete="new-password" required>
+                        <button type="button" class="icon-btn" data-toggle="newPass" title="Show / hide"><i class="fa fa-eye"></i></button>
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="newPass2">Confirm passcode</label>
+                    <input id="newPass2" type="password" minlength="8" autocomplete="new-password" required>
+                </div>
+                <button class="btn" type="submit"><i class="fa fa-lock"></i> Connect &amp; lock</button>
 
-                <section class="service section" id="portfolio">
-                    <div class="container">
-                        <div class="row">
-                            <div class="section-title padd-15">
-                                <h2>Featured Projects</h2>
-                            </div>
-                        </div>
-                        <div class="service-item padd-15">
-                            <div class="service-item-inner">
-                                <div class="icon">
-                                    <i class="fa fa-robot"></i>
-                                </div>
-                                <h4>StegaShield (Digital Security)</h4>
-                                <p><strong>Technologies:</strong> Python, Computer Vision, Security Engineering<br><br>
-                                Built a dual-layer security system that embeds digital watermarks in images to detect tampering. Designed to remain robust across 17+ common image edits.</p>
-                            </div>
-                           </div> 
-                           <div class="service-item padd-15">
-                            <div class="service-item-inner">
-                                <div class="icon">
-                                    <i class="fa fa-cut"></i>
-                                </div>
-                                <h4>News Bias Detector (AI)</h4>
-                                <p><strong>Technologies:</strong> NLP, Model Fine-Tuning, Python<br><br>
-                                Fine-tuned a specialized AI model to identify biased language in news content with 82% accuracy, outperforming standard baselines by 18%.</p>
-                            </div>
-                           </div> 
-                           <div class="service-item padd-15">
-                            <div class="service-item-inner">
-                                <div class="icon">
-                                    <i class="fa fa-home"></i>
-                                </div>
-                                <h4>Dream-Queue Hybrid (Smart Scheduling)</h4>
-                                <p><strong>Technologies:</strong> Systems Design, Scheduling Algorithms, Performance Engineering<br><br>
-                                Developed an intelligent scheduler that uses spare processing power to run background tests while preserving foreground task performance.</p>
-                            </div>
-                           </div> 
-                           <div class="service-item padd-15">
-                            <div class="service-item-inner">
-                                <div class="icon">
-                                    <i class="fa fa-book-open"></i>
-                                </div>
-                                <h4>Savanna Trace (IoT/Tracking)</h4>
-                                <p><strong>Technologies:</strong> Networking, IoT, Automation<br><br>
-                                Built a resilient tracking tool that automatically discovers and updates the IP locations of remote campus equipment, keeping systems accessible as network settings change.</p>
-                            </div>
-                           </div> 
+                <details class="help">
+                    <summary>How do I get a token?</summary>
+                    <ol>
+                        <li>Open <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">GitHub &rarr; New fine-grained token</a>.</li>
+                        <li>Name it e.g. <em>Portfolio admin</em> and pick an expiry date.</li>
+                        <li><strong>Repository access:</strong> Only select repositories &rarr; <code>Manuella-R.github.io</code>.</li>
+                        <li><strong>Permissions &rarr; Repository &rarr; Contents:</strong> Read and write.</li>
+                        <li>Generate, copy the token, and paste it above.</li>
+                    </ol>
+                </details>
+            </form>
+
+            <!-- Returning to this device -->
+            <form id="unlockForm" class="hidden" autocomplete="off">
+                <h2>Welcome back</h2>
+                <div class="field">
+                    <label for="passcode">Passcode</label>
+                    <div class="with-btn">
+                        <input id="passcode" type="password" autocomplete="current-password" required>
+                        <button type="button" class="icon-btn" data-toggle="passcode" title="Show / hide"><i class="fa fa-eye"></i></button>
                     </div>
-                </section>
-                
-                <section class="leadership section" id="leadership">
-                    <div class="container">
-                        <div class="row">
-                            <div class="section-title padd-15">
-                                <h2>Leadership & Community Engagement</h2>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="leadership-content">
-                                <div class="leadership-item padd-15">
-                                    <div class="leadership-item-inner shadow-dark">
-                                        <div class="icon">
-                                            <i class="fa fa-flag"></i>
-                                        </div>
-                                        <h4>President, Strathmore Japanese Club</h4>
-                                        <p class="date"><i class="fa fa-calendar"></i> 2024 - 2025 | Strathmore University</p>
-                                        <div class="leadership-text">
-                                            <p><strong>Key Achievements:</strong></p>
-                                            <ul>
-                                                <li>Spearheaded a strategic partnership with the Japanese Embassy</li>
-                                                <li>Drove a 40% increase in club membership through targeted initiatives</li>
-                                                <li>Facilitated international scholarship workshops and cultural exchange activities</li>
-                                                <li>Led planning for Japanese cultural events, workshops, and student outreach programs</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="leadership-item padd-15">
-                                    <div class="leadership-item-inner shadow-dark">
-                                        <div class="icon">
-                                            <i class="fab fa-google"></i>
-                                        </div>
-                                        <h4>Active Participant, Google Developers Program</h4>
-                                        <p class="date"><i class="fa fa-calendar"></i> 2022 - Present</p>
-                                        <div class="leadership-text">
-                                            <p><strong>Contributions:</strong></p>
-                                            <ul>
-                                                <li>Engage in continuous technical workshops in cloud and artificial intelligence</li>
-                                                <li>Stay updated on modern engineering practices and emerging tools</li>
-                                                <li>Collaborate with peers on practical innovation-focused projects</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                
-                <section class="certifications section" id="certifications">
-                    <div class="container">
-                        <div class="row">
-                            <div class="section-title padd-15">
-                                <h2>Certifications & Professional Development</h2>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="cert-category padd-15">
-                                <h3 class="cert-title"><i class="fa fa-shield-alt"></i> AI, Security & Networking</h3>
-                                <div class="cert-list">
-                                    <div class="cert-item" role="button" tabindex="0" aria-expanded="false">
-                                        <i class="fa fa-certificate"></i>
-                                        <div class="cert-info">
-                                            <h4>Data Science and Machine Learning Specialist</h4>
-                                            <p>Sankhyana | Jan 2025 - Jul 2025</p>
-                                            <div class="cert-extra">
-                                                <p>Focused on practical ML pipelines, evaluation metrics, and deployment-ready model workflows.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="cert-item" role="button" tabindex="0" aria-expanded="false">
-                                        <i class="fa fa-certificate"></i>
-                                        <div class="cert-info">
-                                            <h4>AICE AI Career Essentials</h4>
-                                            <p>ALX Africa | Jan 2024 - May 2024</p>
-                                            <div class="cert-extra">
-                                                <p>Covered AI foundations, responsible AI concepts, and real-world career application skills.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="cert-item" role="button" tabindex="0" aria-expanded="false">
-                                        <i class="fa fa-certificate"></i>
-                                        <div class="cert-info">
-                                            <h4>Cisco Certified: Computer Networks and Cybersecurity</h4>
-                                            <p>Three certifications</p>
-                                            <div class="cert-extra">
-                                                <p>Built hands-on competence in network architecture, threat detection, and foundational cyber defense.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="cert-category padd-15">
-                                <h3 class="cert-title"><i class="fa fa-server"></i> Development & Ethical Hacking</h3>
-                                <div class="cert-list">
-                                    <div class="cert-item" role="button" tabindex="0" aria-expanded="false">
-                                        <i class="fa fa-certificate"></i>
-                                        <div class="cert-info">
-                                            <h4>Deploying Django Apps: Make Your Site Go Live</h4>
-                                            <p>Professional Web Development Certification</p>
-                                            <div class="cert-extra">
-                                                <p>Focused on production deployment, server setup, and best practices for reliable live Django applications.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="cert-item" role="button" tabindex="0" aria-expanded="false">
-                                        <i class="fa fa-certificate"></i>
-                                        <div class="cert-info">
-                                            <h4>Ethical Hacking: Introduction to Ethical Hacking</h4>
-                                            <p>Professional Certification</p>
-                                            <div class="cert-extra">
-                                                <p>Introduced ethical penetration testing concepts, vulnerability identification, and defensive security thinking.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="leadership section" id="referees">
-                    <div class="container">
-                        <div class="row">
-                            <div class="section-title padd-15">
-                                <h2>Referees</h2>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="leadership-content">
-                                <div class="leadership-item padd-15">
-                                    <div class="leadership-item-inner shadow-dark">
-                                        <h4>Kandagor Caleb</h4>
-                                        <p class="date">Professor, Strathmore University</p>
-                                        <div class="leadership-text">
-                                            <p>Email: ckandagor@strathmore.edu<br>Mobile: +254 724 113 271</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="leadership-item padd-15">
-                                    <div class="leadership-item-inner shadow-dark">
-                                        <h4>Irene Muriuki</h4>
-                                        <p class="date">Former Program Management Assistant, USAID</p>
-                                        <div class="leadership-text">
-                                            <p>Email: imuriuki5@gmail.com<br>Mobile: +254 722 278 328</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                
-                  <section class="contact section" id="contact">
-                    <div class="container">
-                        <div class="row">
-                            <div class="section-title padd-15">
-                                <h2>
-                                    Contact Me
-                                </h2>
-                            </div>
-                        </div>
-                        <h3 class="contact-title padd-15">Have You Any Questions?</h3>
-                        <h4 class="contact-sub-title padd-15">I'm Available</h4>
-                        <div class="row">
-                            <div class="contact-info-item padd-15">
-                                <div class="icon"><i class="fa fa-envelope"></i></div>
-                                <h4>Email</h4>
-                                <p><a href="mailto:rehemamanuella@gmail.com" style="color: var(--text-black-700);">rehemamanuella@gmail.com</a></p>
-                            </div>
-                            <div class="contact-info-item padd-15">
-                                <div class="icon"><i class="fa fa-phone"></i></div>
-                                <h4>Call Me</h4>
-                                <p><a href="tel:+254798298573" style="color: var(--text-black-700);">+254 798 298 573</a></p>
-                            </div>
-                            <div class="contact-info-item padd-15">
-                                <div class="icon"><i class="fa fa-map-marker-alt"></i></div>
-                                <h4>Location</h4>
-                                <p>Nairobi, Kenya</p>
-                            </div>
-                            <div class="contact-info-item padd-15">
-                                <div class="icon"><i class="fab fa-linkedin"></i></div>
-                                <h4>LinkedIn</h4>
-                                <p><a href="https://www.linkedin.com/in/rehema-kuria-67967a2a4" target="_blank" style="color: var(--text-black-700);">Rehema Manuella</a></p>
-                            </div>
-                            <div class="contact-info-item padd-15">
-                                <div class="icon"><i class="fab fa-github"></i></div>
-                                <h4>GitHub</h4>
-                                <p><a href="https://github.com/Manuella-R" target="_blank" style="color: var(--text-black-700);">Manuella-R</a></p>
-                            </div>
-                        </div>
-                        <h3 class="contact-title padd-15">SEND AN EMAIL</h3>
-                        <h4 class="contact-sub-title padd-15">Looking forward to hearing from you</h4>
-<form action="http://localhost:3000/send-email" method="post" hidden>
-                        <div class="row">
-                            <div class="contact-form padd-15">
-                                <div class="row">
-                                    <div class="form-item col-6 padd-15">
-                                        <div class="form-group">
-                                            <input type="text" id="names"  class="form-control" placeholder="Name" required>
-                                        </div>
-                                    </div>
-                                    <div class="form-item col-6 padd-15">
-                                        <div class="form-group">
-                                            <input type="email" id="emails"  class="form-control" placeholder="Email" required>
-                                        </div>
-                                    </div>
-                                </div>
-                                    <div class="row">
-                                        <div class="form-item col-12 padd-15">
-                                            <div class="form-group">
-                                                <input type="text" id="sub" class="form-control" placeholder="Subject" required>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                    <div class="form-item col-12 padd-15">
-                                        <div class="form-group">
-                                            <textarea name="" class="form-control" id="mes" placeholder="Message" required></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="form-item col-12 padd-15">
-                                        <div class="form-group">
-                                            <input type="submit" class="btn" value="Send Email"></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                  </section>
-            </div>
+                </div>
+                <button class="btn" type="submit"><i class="fa fa-unlock"></i> Unlock</button>
+                <p class="small-link"><a href="#" id="forget">Use a different token / forget this device</a></p>
+            </form>
+
+            <p id="loginError" class="error hidden" role="alert"></p>
+            <p class="small-link"><a href="../">&larr; Back to website</a></p>
         </div>
-<!-- Scroll to Top Button -->
-<button id="scrollToTop" class="scroll-to-top" title="Back to top">
-    <i class="fas fa-arrow-up"></i>
-</button>
+    </div>
 
-<div class="style-switcher">
-    <div class="style-switcher-toggler s-icon" title="Theme Settings">
-        <i class="fas fa-cog"></i>
+    <!-- ===================== EDITOR ===================== -->
+    <div id="app" class="app hidden">
+        <header class="topbar">
+            <div class="brand"><span>R</span>ehema <small>Admin</small></div>
+            <div class="topbar-center">
+                <span class="branch-pill" title="Branch changes are saved to"><i class="fa fa-code-branch"></i> <span id="branchLabel">main</span></span>
+                <span id="dirtyBadge" class="dirty hidden"><i class="fa fa-circle"></i> Unsaved changes</span>
+            </div>
+            <div class="topbar-actions">
+                <a class="btn ghost" id="viewSite" href="../" target="_blank" rel="noopener"><i class="fa fa-arrow-up-right-from-square"></i> <span>View site</span></a>
+                <button class="btn ghost" id="discardBtn" type="button" title="Reload from GitHub and drop unsaved edits"><i class="fa fa-rotate-left"></i> <span>Discard</span></button>
+                <button class="btn" id="saveBtn" type="button"><i class="fa fa-floppy-disk"></i> <span>Save to website</span></button>
+                <button class="icon-btn" id="themeBtn" type="button" title="Toggle dark / light"><i class="fa fa-circle-half-stroke"></i></button>
+                <button class="icon-btn" id="logoutBtn" type="button" title="Lock"><i class="fa fa-right-from-bracket"></i></button>
+            </div>
+        </header>
+
+        <div class="layout">
+            <nav id="tabs" class="tabs" aria-label="Sections"></nav>
+            <main id="panel" class="panel"></main>
+        </div>
     </div>
-    <div class="day-night s-icon" title="Toggle Dark/Light Mode">
-        <i class="fas"></i>
-    </div>
-    <h4>Theme Colors</h4>
-    <div class="colors">
-        <span class="color-1" onclick="setActiveStyle('color-1')" data-color="Pink" title="Pink Theme"></span>
-        <span class="color-2" onclick="setActiveStyle('color-2')" data-color="Purple" title="Purple Theme"></span>
-        <span class="color-3" onclick="setActiveStyle('color-3')" data-color="Orange" title="Orange Theme"></span>
-        <span class="color-4" onclick="setActiveStyle('color-4')" data-color="Blue" title="Blue Theme"></span>
-        <span class="color-5" onclick="setActiveStyle('color-5')" data-color="Green" title="Green Theme"></span>
-    </div>
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js" integrity="sha512-+2pW8xXU/rNr7VS+H62aqapfRpqFwnSQh9ap6THjsm41AxgA0MhFRtfrABS+Lx2KHJn82UOrnBKhjZOXpom2LQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="js/script.js"></script>
-<script src="js/style-switcher.js"></script>
+
+    <div id="loading" class="loading hidden"><i class="fa fa-circle-notch fa-spin"></i> <span id="loadingText">Working...</span></div>
+    <div id="toasts" class="toasts" aria-live="polite"></div>
+
+    <datalist id="iconList">
+        <option value="fa fa-home"><option value="fa fa-user"><option value="fa fa-code"><option value="fa fa-laptop-code">
+        <option value="fa fa-robot"><option value="fa fa-brain"><option value="fa fa-shield-alt"><option value="fa fa-mobile-alt">
+        <option value="fa fa-database"><option value="fa fa-server"><option value="fa fa-cloud"><option value="fa fa-chart-line">
+        <option value="fa fa-book-open"><option value="fa fa-graduation-cap"><option value="fa fa-school"><option value="fa fa-flag">
+        <option value="fa fa-users"><option value="fa fa-star"><option value="fa fa-trophy"><option value="fa fa-certificate">
+        <option value="fa fa-globe"><option value="fa fa-gamepad"><option value="fa fa-palette"><option value="fa fa-envelope">
+        <option value="fa fa-phone"><option value="fa fa-map-marker-alt"><option value="fa fa-link"><option value="fa fa-microscope">
+        <option value="fab fa-github"><option value="fab fa-linkedin"><option value="fab fa-google"><option value="fab fa-twitter">
+        <option value="fab fa-instagram"><option value="fab fa-youtube"><option value="fab fa-python"><option value="fab fa-java">
+        <option value="fab fa-react"><option value="fab fa-android">
+    </datalist>
+
+    <script src="admin.js"></script>
 </body>
 </html>
