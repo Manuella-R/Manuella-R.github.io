@@ -1,0 +1,147 @@
+{
+  "home": {
+    "name": "Rehema Manuella Wanjiru",
+    "typing": ["Software Developer", "AI/ML Enthusiast", "Full-Stack Developer", "Future Innovator", "Cultural Bridge Builder"],
+    "profession": "Software Developer | AI Researcher",
+    "tagline": "Future Innovator",
+    "intro": "Innovative Software Developer and researcher with Second Class Honors (Upper Division) in Computer Science. Proven in building robust AI solutions, including digital security and media bias detection models, while combining strong technical execution with leadership and community impact.",
+    "image": "images/Rehema.jpg",
+    "cvUrl": "cv/Rehema.pdf",
+    "social": [
+      { "icon": "fab fa-linkedin", "url": "https://www.linkedin.com/in/rehema-kuria-67967a2a4" },
+      { "icon": "fab fa-github", "url": "https://github.com/Manuella-R" },
+      { "icon": "fa fa-envelope", "url": "mailto:rehemamanuella@gmail.com" },
+      { "icon": "fa fa-phone", "url": "tel:+254798298573" }
+    ]
+  },
+  "about": {
+    "headingPrefix": "I'm Rehema Manuella Wanjiru and I am a",
+    "headingHighlight": "Software Developer",
+    "body": "Innovative Software Developer and AI researcher based in Nairobi, Kenya. I hold a strong academic and practical foundation in Computer Science, with focused experience in AI model development, digital security systems, and software engineering.\n\nI build practical solutions that bridge advanced technology and real-world impact, including bias detection, resilient tracking systems, and intelligent scheduling tools.\n\nBeyond technical delivery, I bring leadership experience from serving as President of the Strathmore Japanese Club and volunteering with the Embassy of Japan in Kenya, where I have helped connect technology, culture, and community engagement.",
+    "info": [
+      { "label": "Email", "value": "rehemamanuella@gmail.com", "url": "" },
+      { "label": "Phone", "value": "+254 798 298 573", "url": "" },
+      { "label": "City", "value": "Nairobi, Kenya", "url": "" },
+      { "label": "Degree", "value": "B.Sc. Computer Science & Informatics", "url": "" },
+      { "label": "Freelance", "value": "Available", "url": "" },
+      { "label": "LinkedIn", "value": "Profile", "url": "https://www.linkedin.com/in/rehema-kuria-67967a2a4" },
+      { "label": "GitHub", "value": "Manuella-R", "url": "https://github.com/Manuella-R" },
+      { "label": "Languages", "value": "English (Native), Japanese", "url": "" }
+    ]
+  },
+  "education": [
+    {
+      "icon": "fa fa-graduation-cap",
+      "title": "Strathmore University",
+      "highlight": "Expected August 2026",
+      "details": "Bachelor of Science in Computer Science & Informatics\nSecond Class Honors (Upper Division)\nRelevant coursework: AI, Machine Learning, Data Structures, Algorithms, Software Development"
+    },
+    {
+      "icon": "fa fa-school",
+      "title": "Pioneer Girls' High School",
+      "highlight": "2017 - 2021",
+      "details": "Completed KCSE Exams with a mean grade of **A-**."
+    }
+  ],
+  "skills": [
+    { "icon": "fa fa-brain", "title": "Machine Learning", "items": [
+      { "name": "Scikit-learn", "level": 88 }, { "name": "TensorFlow", "level": 85 }, { "name": "Prompt Engineering", "level": 90 }, { "name": "Python", "level": 92 }, { "name": "Computer Vision", "level": 86 } ] },
+    { "icon": "fa fa-code", "title": "Web Development", "items": [
+      { "name": "React", "level": 87 }, { "name": "Laravel", "level": 82 }, { "name": "HTML / CSS", "level": 91 }, { "name": "JavaScript", "level": 88 }, { "name": "SQL", "level": 84 } ] },
+    { "icon": "fa fa-shield-alt", "title": "Cybersecurity", "items": [
+      { "name": "Digital Forensics", "level": 81 }, { "name": "Ethical Hacking", "level": 83 } ] },
+    { "icon": "fa fa-mobile-alt", "title": "App Development", "items": [
+      { "name": "Kotlin", "level": 82 }, { "name": "Java", "level": 90 } ] },
+    { "icon": "fa fa-code-branch", "title": "Software & Collaboration", "items": [
+      { "name": "Git", "level": 89 } ] },
+    { "icon": "fa fa-microscope", "title": "Research", "items": [
+      { "name": "AI Experimentation", "level": 88 }, { "name": "Model Validation", "level": 87 } ] },
+    { "icon": "fa fa-users", "title": "Leadership", "items": [
+      { "name": "Team Coordination", "level": 92 }, { "name": "Stakeholder Communication", "level": 90 } ] }
+  ],
+  "projects": [
+    {
+      "icon": "fa fa-robot",
+      "title": "StegaShield (Digital Security)",
+      "tech": "Python, Computer Vision, Security Engineering",
+      "description": "Built a dual-layer security system that embeds digital watermarks in images to detect tampering. Designed to remain robust across 17+ common image edits.",
+      "link": "", "linkLabel": ""
+    },
+    {
+      "icon": "fa fa-cut",
+      "title": "News Bias Detector (AI)",
+      "tech": "NLP, Model Fine-Tuning, Python",
+      "description": "Fine-tuned a specialized AI model to identify biased language in news content with 82% accuracy, outperforming standard baselines by 18%.",
+      "link": "", "linkLabel": ""
+    },
+    {
+      "icon": "fa fa-home",
+      "title": "Dream-Queue Hybrid (Smart Scheduling)",
+      "tech": "Systems Design, Scheduling Algorithms, Performance Engineering",
+      "description": "Developed an intelligent scheduler that uses spare processing power to run background tests while preserving foreground task performance.",
+      "link": "", "linkLabel": ""
+    },
+    {
+      "icon": "fa fa-book-open",
+      "title": "Savanna Trace (IoT/Tracking)",
+      "tech": "Networking, IoT, Automation",
+      "description": "Built a resilient tracking tool that automatically discovers and updates the IP locations of remote campus equipment, keeping systems accessible as network settings change.",
+      "link": "", "linkLabel": ""
+    }
+  ],
+  "leadership": [
+    {
+      "icon": "fa fa-flag",
+      "title": "President, Strathmore Japanese Club",
+      "period": "2024 - 2025 | Strathmore University",
+      "pointsLabel": "Key Achievements:",
+      "points": [
+        "Spearheaded a strategic partnership with the Japanese Embassy",
+        "Drove a 40% increase in club membership through targeted initiatives",
+        "Facilitated international scholarship workshops and cultural exchange activities",
+        "Led planning for Japanese cultural events, workshops, and student outreach programs"
+      ]
+    },
+    {
+      "icon": "fab fa-google",
+      "title": "Active Participant, Google Developers Program",
+      "period": "2022 - Present",
+      "pointsLabel": "Contributions:",
+      "points": [
+        "Engage in continuous technical workshops in cloud and artificial intelligence",
+        "Stay updated on modern engineering practices and emerging tools",
+        "Collaborate with peers on practical innovation-focused projects"
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "icon": "fa fa-shield-alt",
+      "title": "AI, Security & Networking",
+      "items": [
+        { "title": "Data Science and Machine Learning Specialist", "issuer": "Sankhyana | Jan 2025 - Jul 2025", "description": "Focused on practical ML pipelines, evaluation metrics, and deployment-ready model workflows." },
+        { "title": "AICE AI Career Essentials", "issuer": "ALX Africa | Jan 2024 - May 2024", "description": "Covered AI foundations, responsible AI concepts, and real-world career application skills." },
+        { "title": "Cisco Certified: Computer Networks and Cybersecurity", "issuer": "Three certifications", "description": "Built hands-on competence in network architecture, threat detection, and foundational cyber defense." }
+      ]
+    },
+    {
+      "icon": "fa fa-server",
+      "title": "Development & Ethical Hacking",
+      "items": [
+        { "title": "Deploying Django Apps: Make Your Site Go Live", "issuer": "Professional Web Development Certification", "description": "Focused on production deployment, server setup, and best practices for reliable live Django applications." },
+        { "title": "Ethical Hacking: Introduction to Ethical Hacking", "issuer": "Professional Certification", "description": "Introduced ethical penetration testing concepts, vulnerability identification, and defensive security thinking." }
+      ]
+    }
+  ],
+  "referees": [
+    { "name": "Kandagor Caleb", "role": "Professor, Strathmore University", "details": "Email: ckandagor@strathmore.edu\nMobile: +254 724 113 271" },
+    { "name": "Irene Muriuki", "role": "Former Program Management Assistant, USAID", "details": "Email: imuriuki5@gmail.com\nMobile: +254 722 278 328" }
+  ],
+  "contact": [
+    { "icon": "fa fa-envelope", "title": "Email", "value": "rehemamanuella@gmail.com", "url": "mailto:rehemamanuella@gmail.com" },
+    { "icon": "fa fa-phone", "title": "Call Me", "value": "+254 798 298 573", "url": "tel:+254798298573" },
+    { "icon": "fa fa-map-marker-alt", "title": "Location", "value": "Nairobi, Kenya", "url": "" },
+    { "icon": "fab fa-linkedin", "title": "LinkedIn", "value": "Rehema Manuella", "url": "https://www.linkedin.com/in/rehema-kuria-67967a2a4" },
+    { "icon": "fab fa-github", "title": "GitHub", "value": "Manuella-R", "url": "https://github.com/Manuella-R" }
+  ]
+}
