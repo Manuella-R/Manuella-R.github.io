@@ -528,12 +528,17 @@
     {
       "name": "Kandagor Caleb",
       "role": "Professor, Strathmore University",
-      "details": "Email: ckandagor@strathmore.edu\nMobile: +254 724 113 271"
+      "details": ""
     },
     {
       "name": "Irene Muriuki",
       "role": "Former Program Management Assistant, USAID",
-      "details": "Email: imuriuki5@gmail.com\nMobile: +254 722 278 328"
+      "details": ""
+    },
+    {
+      "name": "Edmond Menya",
+      "role": "Strathmore University AI Lecturer",
+      "details": ""
     }
   ],
   "contact": [
