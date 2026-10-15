@@ -43,16 +43,6 @@
         "url": ""
       },
       {
-        "label": "Phone",
-        "value": "+254 798 298 573",
-        "url": ""
-      },
-      {
-        "label": "City",
-        "value": "Nairobi, Kenya",
-        "url": ""
-      },
-      {
         "label": "Degree",
         "value": "B.Sc. Computer Science & Informatics",
         "url": ""
@@ -100,27 +90,22 @@
       "items": [
         {
           "name": "Linux command line (CentOS)",
-          "level": 0,
+          "level": 40,
           "label": "Hands-on"
         },
         {
           "name": "Apache web server",
-          "level": 0,
+          "level": 40,
           "label": "Hands-on"
         },
         {
           "name": "Cloud VM hosting (Google Cloud)",
-          "level": 0,
-          "label": "Hands-on"
-        },
-        {
-          "name": "Docker & Docker Compose",
-          "level": 0,
+          "level": 50,
           "label": "Hands-on"
         },
         {
           "name": "AWS architecture & cloud concepts",
-          "level": 0,
+          "level": 70,
           "label": "6 learning paths"
         }
       ]
