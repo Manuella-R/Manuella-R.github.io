@@ -549,18 +549,6 @@
       "url": "mailto:rehemamanuella@gmail.com"
     },
     {
-      "icon": "fa fa-phone",
-      "title": "Call Me",
-      "value": "+254 798 298 573",
-      "url": "tel:+254798298573"
-    },
-    {
-      "icon": "fa fa-map-marker-alt",
-      "title": "Location",
-      "value": "Nairobi, Kenya",
-      "url": ""
-    },
-    {
       "icon": "fab fa-linkedin",
       "title": "LinkedIn",
       "value": "Rehema Manuella",
