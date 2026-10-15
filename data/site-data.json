@@ -330,7 +330,7 @@
           "label": "common image edits withstood"
         }
       ],
-      "link": "",
+      "link": "https://github.com/Manuella-R/StegaShield",
       "linkLabel": "",
       "demo": ""
     },
@@ -540,6 +540,34 @@
       ],
       "results": [],
       "link": "https://github.com/Manuella-R/space_shooter",
+      "linkLabel": "",
+      "demo": ""
+    },
+    {
+      "title": "QwaNimah Website",
+      "icon": "fa fa-globe",
+      "categories": [
+        "Web & Apps"
+      ],
+      "description": "Advertisement website for the Qwa Nimah property in Mombasa",
+      "problem": "",
+      "tech": "Vercel, typeScript, Lovable, CSS",
+      "actions": [],
+      "results": [],
+      "link": "https://github.com/Manuella-R/QwaNimah",
+      "linkLabel": "",
+      "demo": "https://qwa-nimah.vercel.app/"
+    },
+    {
+      "title": "",
+      "icon": "fa fa-laptop-code",
+      "categories": [],
+      "description": "",
+      "problem": "",
+      "tech": "",
+      "actions": [],
+      "results": [],
+      "link": "",
       "linkLabel": "",
       "demo": ""
     }
