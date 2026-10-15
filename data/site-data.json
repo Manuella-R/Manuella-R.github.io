@@ -158,7 +158,8 @@
         },
         {
           "name": "Computer Vision",
-          "level": 86
+          "level": 86,
+          "label": "Hands-on"
         }
       ]
     },
@@ -189,26 +190,13 @@
       ]
     },
     {
-      "icon": "fa fa-shield-alt",
-      "title": "Cybersecurity",
-      "items": [
-        {
-          "name": "Digital Forensics",
-          "level": 81
-        },
-        {
-          "name": "Ethical Hacking",
-          "level": 83
-        }
-      ]
-    },
-    {
       "icon": "fa fa-mobile-alt",
       "title": "App Development",
       "items": [
         {
           "name": "Kotlin",
-          "level": 82
+          "level": 82,
+          "label": "Hands-on"
         },
         {
           "name": "Java",
@@ -222,7 +210,8 @@
       "items": [
         {
           "name": "Git",
-          "level": 89
+          "level": 89,
+          "label": "Hands-on"
         }
       ]
     },
@@ -246,11 +235,13 @@
       "items": [
         {
           "name": "Team Coordination",
-          "level": 92
+          "level": 92,
+          "label": "Hands-on"
         },
         {
           "name": "Stakeholder Communication",
-          "level": 90
+          "level": 90,
+          "label": "Hands-on"
         }
       ]
     }
