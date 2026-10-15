@@ -505,12 +505,39 @@
     },
     {
       "title": "3D Flappy Sphere Game",
-      "icon": "fa fa-laptop-code",
-      "categories": [],
-      "description": "",
-      "problem": "",
-      "tech": "",
+      "icon": "fa-solid fa-gamepad",
+      "categories": [
+        "Game Development",
+        "Web & Apps"
+      ],
+      "description": "This project is a modernized version of the classic Flappy Bird game, featuring a spherical bird in a 3D environment with gradient effects, as well as 3D-styled pipes. ",
+      "problem": "he objective is to control the vertical movement of the sphere and navigate it through the pipes while avoiding collisions.",
+      "tech": "Python",
       "actions": [],
+      "results": [],
+      "link": "https://github.com/Manuella-R/Flappy-Bird-Project",
+      "linkLabel": "",
+      "demo": ""
+    },
+    {
+      "title": "Cannon Shooter Game",
+      "icon": "fa fa-gamepad",
+      "categories": [
+        "Game Development",
+        "Web & Apps"
+      ],
+      "description": "an action-packed arcade game built using Python and Pygame, where you control a cannon to shoot down falling enemies and avoid getting hit. The game features a level system, power-ups, and shield mechanics to enhance gameplay. You can choose from multiple player models and track your progress with a score, level, and lives system.",
+      "problem": "",
+      "tech": "Python, Pygame",
+      "actions": [
+        "Multiple Player Models: Choose from various cannon models.",
+        "Random Backgrounds: Enjoy a dynamic game experience with random background images.",
+        "Enemies and Bullets: Shoot bullets at falling enemies (spheres).",
+        "Power-ups: Collect power-ups that activate a shield to protect you.",
+        "Score and Level System: Track your progress with a score and level system. The game gets more challenging as you advance to higher levels.",
+        "Pause Functionality: Pause and resume the game at any time by pressing 'P'.",
+        "Game Over: The game ends when you lose all your lives."
+      ],
       "results": [],
       "link": "",
       "linkLabel": "",
