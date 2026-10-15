@@ -457,7 +457,7 @@
         "Game Development",
         "Web & Apps"
       ],
-      "description": "Cupid's Arrow is a simple yet addictive game where you shoot falling hearts before they pile up and reach your bow. The game is optimized for both PC and mobile devices, making it a fun experience on touchscreens.Cupid's Arrow is a simple yet addictive game where you shoot falling hearts before they pile up and reach your bow. The game is optimized for both PC and mobile devices, making it a fun experience on touchscreens.",
+      "description": "Cupid's Arrow is a simple yet addictive game where you shoot falling hearts before they pile up and reach your bow. ",
       "problem": "",
       "tech": "python, Pygame",
       "actions": [
