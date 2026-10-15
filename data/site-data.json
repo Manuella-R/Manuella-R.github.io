@@ -559,6 +559,27 @@
       "demo": "https://qwa-nimah.vercel.app/"
     },
     {
+      "title": "User-Authentication-and-Profile",
+      "icon": "fa fa-users",
+      "categories": [
+        "Web & Apps"
+      ],
+      "description": "a simple user authentication and profile system built using Kotlin for Android.",
+      "problem": "",
+      "tech": "Kotlin, firebase, Jetpack Compose",
+      "actions": [
+        "Sign Up / Log In with Email and Password using Firebase Authentication.",
+        "Email Verification:",
+        "Forgot Password:",
+        "User Profile- After signing in, users are redirected to their Profile Page, The profile section contains links to static pages",
+        "Static Pages"
+      ],
+      "results": [],
+      "link": "https://github.com/Manuella-R/User-Authentication-and-Profile",
+      "linkLabel": "",
+      "demo": ""
+    },
+    {
       "title": "",
       "icon": "fa fa-laptop-code",
       "categories": [],
