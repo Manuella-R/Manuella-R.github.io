@@ -591,6 +591,34 @@
       "link": "",
       "linkLabel": "",
       "demo": ""
+    },
+    {
+      "title": "To Do List",
+      "icon": "fa fa-book-open",
+      "categories": [
+        "Web & Apps"
+      ],
+      "description": "A clean, themeable to-do list web app built with vanilla HTML, CSS, and JavaScript",
+      "problem": "",
+      "tech": "JavaScript, CSS, HTML",
+      "actions": [],
+      "results": [],
+      "link": "https://github.com/Manuella-R/Manuella-RT-list",
+      "linkLabel": "",
+      "demo": "https://manuella-r.github.io/Manuella-RT-list/"
+    },
+    {
+      "title": "",
+      "icon": "fa fa-laptop-code",
+      "categories": [],
+      "description": "",
+      "problem": "",
+      "tech": "",
+      "actions": [],
+      "results": [],
+      "link": "",
+      "linkLabel": "",
+      "demo": ""
     }
   ],
   "leadership": [
