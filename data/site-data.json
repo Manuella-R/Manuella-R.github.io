@@ -489,6 +489,21 @@
       "demo": ""
     },
     {
+      "title": "Java Client-Server Communication Program",
+      "icon": "fa fa-laptop-code",
+      "categories": [
+        "Cloud & Infrastructure"
+      ],
+      "description": "This project demonstrates a simple client-server communication system using Java Sockets.\nThe client and server exchange messages over a socket connection until either side types bye, which terminates the connection.",
+      "problem": "",
+      "tech": "Java, CLI",
+      "actions": [],
+      "results": [],
+      "link": "https://github.com/Manuella-R/1-Socket-Programming",
+      "linkLabel": "",
+      "demo": ""
+    },
+    {
       "title": "",
       "icon": "fa fa-laptop-code",
       "categories": [],
