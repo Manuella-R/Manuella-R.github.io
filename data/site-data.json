@@ -452,7 +452,7 @@
     },
     {
       "title": "Valentines Game",
-      "icon": "fa-solid fa-gamepad",
+      "icon": "fa fa-gamepad",
       "categories": [
         "Game Development",
         "Web & Apps"
@@ -505,7 +505,7 @@
     },
     {
       "title": "3D Flappy Sphere Game",
-      "icon": "fa-solid fa-gamepad",
+      "icon": "fa fa-gamepad",
       "categories": [
         "Game Development",
         "Web & Apps"
