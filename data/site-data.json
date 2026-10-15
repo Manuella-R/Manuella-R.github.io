@@ -357,7 +357,7 @@
           "label": "over standard baselines"
         }
       ],
-      "link": "",
+      "link": "https://github.com/Manuella-R/bias_Detector",
       "linkLabel": "",
       "demo": ""
     },
@@ -444,6 +444,38 @@
       "tech": "",
       "description": "Posters designed for events and campaigns.",
       "problem": "",
+      "actions": [],
+      "results": [],
+      "link": "",
+      "linkLabel": "",
+      "demo": ""
+    },
+    {
+      "title": "Valentines Game",
+      "icon": "fa fa-laptop-code",
+      "categories": [
+        "Game Development",
+        "Web & Apps"
+      ],
+      "description": "Cupid's Arrow is a simple yet addictive game where you shoot falling hearts before they pile up and reach your bow. The game is optimized for both PC and mobile devices, making it a fun experience on touchscreens.Cupid's Arrow is a simple yet addictive game where you shoot falling hearts before they pile up and reach your bow. The game is optimized for both PC and mobile devices, making it a fun experience on touchscreens.",
+      "problem": "",
+      "tech": "python, Pygame",
+      "actions": [
+        "Developed the core gameplay loop, including the heart-spawning mechanics, tap-to-shoot targeting, score tracking",
+        "Configured the mobile build pipeline, writing the Buildozer specifications to handle package naming, permissions, and APK generation for Android deployment."
+      ],
+      "results": [],
+      "link": "https://github.com/Manuella-R/valentine-game",
+      "linkLabel": "",
+      "demo": ""
+    },
+    {
+      "title": "",
+      "icon": "fa fa-laptop-code",
+      "categories": [],
+      "description": "",
+      "problem": "",
+      "tech": "",
       "actions": [],
       "results": [],
       "link": "",
