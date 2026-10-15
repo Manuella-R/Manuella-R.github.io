@@ -48,6 +48,16 @@
         return 'href="' + esc(url) + '"' + (isExternal(url) ? ' target="_blank" rel="noopener"' : '');
     }
 
+    function slug(value) {
+        return String(value || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+    }
+
+    // Accepts an array or a comma/newline separated string and returns a clean array.
+    function toList(value) {
+        if (Array.isArray(value)) return value.map(function (v) { return String(v).trim(); }).filter(Boolean);
+        return String(value || '').split(/[\n,]/).map(function (v) { return v.trim(); }).filter(Boolean);
+    }
+
     function $(sel, root) { return (root || document).querySelector(sel); }
 
     function setHTML(el, html) { if (el) el.innerHTML = html; }
@@ -125,6 +135,11 @@
         var rows = document.querySelectorAll('#service .row');
         setHTML(rows[1], list.map(function (g) {
             var items = (g.items || []).map(function (s) {
+                // Items with a text label (e.g. "Hands-on") show a badge instead of a percentage bar.
+                if (s.label) {
+                    return '<div class="expertise-skill expertise-skill--label"><span>' + esc(s.name) + '</span>' +
+                        '<span class="skill-level">' + esc(s.label) + '</span></div>';
+                }
                 var lvl = Math.max(0, Math.min(100, parseInt(s.level, 10) || 0));
                 return '<div class="expertise-skill"><span>' + esc(s.name) + '</span>' +
                     '<div class="expertise-progress"><div class="expertise-progress-in" data-width="' + lvl + '"></div></div>' +
@@ -136,34 +151,104 @@
                 '<h4>' + esc(g.title) + '</h4><p>Click to view skill levels</p>' +
                 '<div class="expertise-details">' + items + '</div></div></div>';
         }).join(''));
+
+        // "Expand all" control above the cards (wired up in js/script.js).
+        var old = $('#service .pf-toolbar');
+        if (old) old.remove();
+        if (rows[1]) {
+            rows[1].insertAdjacentHTML('beforebegin',
+                '<div class="pf-toolbar"><span class="pf-toolbar-spacer"></span>' +
+                '<button type="button" class="pf-expand" data-cards="#service .expertise-card">Expand all</button></div>');
+        }
     }
 
     function renderProjects(list) {
         if (!list) return;
         var container = $('#portfolio .container');
         if (!container) return;
-        container.querySelectorAll(':scope > .service-item').forEach(function (n) { n.remove(); });
-        var html = list.map(function (p) {
-            var url = safeUrl(p.link);
-            var link = url
-                ? '<br><br><a class="project-link" ' + linkAttrs(url) + '><i class="fa fa-external-link-alt"></i> ' +
-                  esc(p.linkLabel || 'View project') + '</a>'
-                : '';
-            return '<div class="service-item padd-15"><div class="service-item-inner">' +
+        container.querySelectorAll(':scope > .service-item, :scope > .pf-toolbar, :scope > .pf-status, :scope > .pf-grid').forEach(function (n) { n.remove(); });
+
+        // Category filter chips are built from the categories used by the projects, in order of first use.
+        var cats = [];
+        list.forEach(function (p) {
+            toList(p.categories).forEach(function (c) {
+                if (!cats.some(function (x) { return x.id === slug(c); })) cats.push({ id: slug(c), label: c });
+            });
+        });
+        cats.forEach(function (c) {
+            c.count = list.filter(function (p) {
+                return toList(p.categories).some(function (x) { return slug(x) === c.id; });
+            }).length;
+        });
+
+        var chips = cats.length > 1
+            ? '<div class="pf-chips" role="group" aria-label="Filter projects by category">' +
+              '<button type="button" class="pf-chip" data-filter="all" aria-pressed="true">All <span>' + list.length + '</span></button>' +
+              cats.map(function (c) {
+                  return '<button type="button" class="pf-chip" data-filter="' + esc(c.id) + '" aria-pressed="false">' +
+                      esc(c.label) + ' <span>' + c.count + '</span></button>';
+              }).join('') + '</div>'
+            : '<span class="pf-toolbar-spacer"></span>';
+
+        var toolbar = '<div class="pf-toolbar">' + chips +
+            '<button type="button" class="pf-expand" data-cards="#portfolio .project-card">Expand all</button></div>' +
+            '<p class="pf-status" role="status" aria-live="polite" data-total="' + list.length + '"></p>';
+
+        var cards = list.map(function (p, i) {
+            var id = 'project-details-' + i;
+            var pCats = toList(p.categories);
+            var tags = toList(p.tech);
+            var actions = toList(p.actions);
+            var results = (p.results || []).filter(function (r) { return r && (r.value || r.label); });
+            var link = safeUrl(p.link);
+            var demo = safeUrl(p.demo);
+
+            var details = '';
+            if (p.problem) details += '<h5>The problem</h5><p>' + rich(p.problem) + '</p>';
+            if (tags.length) {
+                details += '<h5>Built with</h5><ul class="project-tags">' +
+                    tags.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul>';
+            }
+            if (actions.length) {
+                details += '<h5>What I did</h5><ul class="project-actions">' +
+                    actions.map(function (a) { return '<li>' + esc(a) + '</li>'; }).join('') + '</ul>';
+            }
+            if (results.length) {
+                details += '<h5>Results</h5><ul class="project-results">' + results.map(function (r) {
+                    return '<li><strong>' + esc(r.value) + '</strong><span>' + esc(r.label) + '</span></li>';
+                }).join('') + '</ul>';
+            }
+            if (link || demo) {
+                details += '<div class="project-links">' +
+                    (link ? '<a class="project-link" ' + linkAttrs(link) + '><i class="fa fa-external-link-alt"></i> ' + esc(p.linkLabel || 'View project') + '</a>' : '') +
+                    (demo ? '<a class="project-link" ' + linkAttrs(demo) + '><i class="fa fa-play-circle"></i> Live demo</a>' : '') +
+                    '</div>';
+            }
+
+            return '<div class="service-item padd-15" data-cats="' + esc(pCats.map(slug).join(' ')) + '">' +
+                '<div class="service-item-inner project-card">' +
                 '<div class="icon"><i class="' + esc(icon(p.icon, 'fa fa-laptop-code')) + '"></i></div>' +
                 '<h4>' + esc(p.title) + '</h4>' +
-                '<p>' + (p.tech ? '<strong>Technologies:</strong> ' + esc(p.tech) + '<br><br>' : '') +
-                rich(p.description) + link + '</p></div></div>';
+                (pCats.length ? '<ul class="project-cats">' + pCats.map(function (c) { return '<li>' + esc(c) + '</li>'; }).join('') + '</ul>' : '') +
+                '<p class="project-summary">' + rich(p.description) + '</p>' +
+                (details
+                    ? '<button type="button" class="project-toggle" aria-expanded="false" aria-controls="' + id + '">' +
+                      '<span class="pt-label">View details</span><i class="fa fa-chevron-down" aria-hidden="true"></i></button>' +
+                      '<div class="project-details" id="' + id + '"><div class="project-details-inner">' + details + '</div></div>'
+                    : '') +
+                '</div></div>';
         }).join('');
-        container.insertAdjacentHTML('beforeend', html);
+
+        container.insertAdjacentHTML('beforeend', toolbar + '<div class="row pf-grid">' + cards + '</div>');
     }
 
-    function renderLeadership(list) {
+    // Shared by Leadership and Work Experience: they use the same card layout.
+    function renderRoles(selector, list, defaultIcon) {
         if (!list) return;
-        setHTML($('#leadership .leadership-content'), list.map(function (l) {
-            var points = (l.points || []).map(function (pt) { return '<li>' + esc(pt) + '</li>'; }).join('');
+        setHTML($(selector), list.map(function (l) {
+            var points = toList(l.points).map(function (pt) { return '<li>' + esc(pt) + '</li>'; }).join('');
             return '<div class="leadership-item padd-15"><div class="leadership-item-inner shadow-dark">' +
-                '<div class="icon"><i class="' + esc(icon(l.icon, 'fa fa-flag')) + '"></i></div>' +
+                '<div class="icon"><i class="' + esc(icon(l.icon, defaultIcon)) + '"></i></div>' +
                 '<h4>' + esc(l.title) + '</h4>' +
                 '<p class="date"><i class="fa fa-calendar"></i> ' + esc(l.period) + '</p>' +
                 '<div class="leadership-text">' +
@@ -171,6 +256,10 @@
                 '</div></div></div>';
         }).join(''));
     }
+
+    function renderLeadership(list) { renderRoles('#leadership .leadership-content', list, 'fa fa-flag'); }
+
+    function renderExperience(list) { renderRoles('#experience .leadership-content', list, 'fa fa-briefcase'); }
 
     function renderCerts(list) {
         if (!list) return;
@@ -186,6 +275,21 @@
                 '<h3 class="cert-title"><i class="' + esc(icon(c.icon, 'fa fa-certificate')) + '"></i> ' + esc(c.title) + '</h3>' +
                 '<div class="cert-list">' + items + '</div></div>';
         }).join(''));
+    }
+
+    // Compact badge strip (AWS learning paths, Cisco) shown above the certification cards.
+    function renderCredentials(list) {
+        if (!list) return;
+        var container = $('#certifications .container');
+        if (!container) return;
+        var old = container.querySelector(':scope > .cred-strip');
+        if (old) old.remove();
+        var anchor = container.querySelectorAll(':scope > .row')[1];
+        if (!anchor || !list.length) return;
+        anchor.insertAdjacentHTML('beforebegin', '<div class="cred-strip">' + list.map(function (g) {
+            return '<div class="cred-group"><h3 class="cred-title"><i class="' + esc(icon(g.icon, 'fa fa-certificate')) + '"></i> ' + esc(g.title) + '</h3>' +
+                '<ul class="cred-badges">' + toList(g.items).map(function (i) { return '<li>' + esc(i) + '</li>'; }).join('') + '</ul></div>';
+        }).join('') + '</div>');
     }
 
     function renderReferees(list) {
@@ -218,10 +322,12 @@
             function () { renderHome(d.home); },
             function () { renderAbout(d.about); },
             function () { renderEducation(d.education); },
+            function () { renderExperience(d.experience); },
             function () { renderSkills(d.skills); },
             function () { renderProjects(d.projects); },
             function () { renderLeadership(d.leadership); },
             function () { renderCerts(d.certifications); },
+            function () { renderCredentials(d.credentials); },
             function () { renderReferees(d.referees); },
             function () { renderContact(d.contact); }
         ].forEach(function (fn) {

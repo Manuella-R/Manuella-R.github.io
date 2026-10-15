@@ -1,0 +1,10 @@
+# GitHub Pages (Jekyll) settings.
+# Files listed here stay in the repository but are NOT published on the website.
+exclude:
+  - README.md
+  - SUMMARY.md
+  - STYLE_SWITCHER_IMPROVEMENTS.md
+  - VISUAL_IMPROVEMENTS.md
+  - app.js
+  - check-image.sh
+  - test-image.html

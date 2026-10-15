@@ -61,27 +61,46 @@
             { k: 'highlight', label: 'Bold line (dates)', t: 'text' },
             { k: 'details', label: 'Details', t: 'textarea', hint: 'One line per row. Wrap text in **double asterisks** for bold.' }
           ] },
+        { key: 'experience', label: 'Experience', icon: 'fa-briefcase', kind: 'list', itemName: 'job',
+          lead: 'Internships, jobs and volunteer roles, shown as cards in the Work Experience section.',
+          summary: function (i) { return i.title; },
+          fields: [
+            { k: 'title', label: 'Role', t: 'text' },
+            { k: 'icon', label: 'Icon', t: 'icon', def: 'fa fa-briefcase' },
+            { k: 'period', label: 'Dates | Organisation', t: 'text', ph: 'Jan 2025 - Mar 2025 | Organisation' },
+            { k: 'pointsLabel', label: 'Bullet list heading', t: 'text', def: 'What I did:' },
+            { k: 'points', label: 'Bullet points (one per line)', t: 'lines' }
+          ] },
         { key: 'skills', label: 'Skills', icon: 'fa-cogs', kind: 'list', itemName: 'skill group',
-          lead: 'Each group becomes a card; clicking it on the site reveals the skill bars.',
+          lead: 'Each group becomes a card; clicking it on the site reveals the skills. Give a skill a text level (e.g. Hands-on) to show a badge instead of a percentage bar.',
           summary: function (i) { return i.title; },
           fields: [
             { k: 'title', label: 'Group name', t: 'text' },
             { k: 'icon', label: 'Icon', t: 'icon' },
             { k: 'items', label: 'Skills', t: 'list', inline: true, itemName: 'skill',
-              cols: '1fr 110px', fields: [
+              cols: '1fr 90px 1fr', fields: [
                 { k: 'name', label: 'Skill', t: 'text' },
-                { k: 'level', label: 'Level %', t: 'number', cls: 'num', def: 80 } ] }
+                { k: 'level', label: 'Level %', t: 'number', cls: 'num', def: 80 },
+                { k: 'label', label: 'Text level (optional, replaces the bar)', t: 'text', ph: 'e.g. Hands-on' } ] }
           ] },
         { key: 'projects', label: 'Projects', icon: 'fa-laptop-code', kind: 'list', itemName: 'project',
-          lead: 'Add new projects, edit existing ones, or reorder them.',
+          lead: 'Each project is a card on the site. The summary shows on the card; everything else opens when a visitor clicks it. Categories become the filter buttons.',
           summary: function (i) { return i.title; },
           fields: [
             { k: 'title', label: 'Project title', t: 'text' },
             { k: 'icon', label: 'Icon', t: 'icon', def: 'fa fa-laptop-code' },
-            { k: 'tech', label: 'Technologies', t: 'text', ph: 'Python, React, ...' },
-            { k: 'description', label: 'Description', t: 'textarea', hint: 'Use **double asterisks** for bold.' },
+            { k: 'categories', label: 'Categories (one per line)', t: 'lines', hint: 'e.g. Cloud & Infrastructure, Cybersecurity, AI & Machine Learning. A project can have more than one.' },
+            { k: 'description', label: 'Short summary (shown on the card)', t: 'textarea', hint: 'One or two sentences. Use **double asterisks** for bold.' },
+            { k: 'problem', label: 'The problem (shown when opened)', t: 'textarea' },
+            { k: 'tech', label: 'Technologies (comma separated)', t: 'text', ph: 'Python, Docker, ...', hint: 'Shown as tags when the card is opened.' },
+            { k: 'actions', label: 'What I did (one per line)', t: 'lines' },
+            { k: 'results', label: 'Results (numbers that matter)', t: 'list', inline: true, itemName: 'result',
+              cols: '110px 1fr', fields: [
+                { k: 'value', label: 'Value', t: 'text', ph: '82%' },
+                { k: 'label', label: 'What it measures', t: 'text', ph: 'accuracy' } ] },
             { k: 'link', label: 'Project link (optional)', t: 'text', ph: 'https://github.com/...' },
-            { k: 'linkLabel', label: 'Link text (optional)', t: 'text', ph: 'View on GitHub' }
+            { k: 'linkLabel', label: 'Link text (optional)', t: 'text', ph: 'View on GitHub' },
+            { k: 'demo', label: 'Live demo link (optional)', t: 'text', ph: 'https://...' }
           ] },
         { key: 'leadership', label: 'Leadership', icon: 'fa-users', kind: 'list', itemName: 'role',
           lead: 'Leadership roles and community engagement.',
@@ -105,6 +124,14 @@
                 { k: 'title', label: 'Certificate', t: 'text' },
                 { k: 'issuer', label: 'Issuer | dates', t: 'text' },
                 { k: 'description', label: 'Description (shown when expanded)', t: 'textarea' } ] }
+          ] },
+        { key: 'credentials', label: 'Credential badges', icon: 'fa-award', kind: 'list', itemName: 'badge group',
+          lead: 'The quick-glance badge strip above the certifications (for example the AWS learning paths).',
+          summary: function (i) { return i.title; },
+          fields: [
+            { k: 'title', label: 'Group heading', t: 'text', ph: 'AWS Learning Paths (6)' },
+            { k: 'icon', label: 'Icon', t: 'icon', def: 'fa fa-certificate' },
+            { k: 'items', label: 'Badges (one per line)', t: 'lines' }
           ] },
         { key: 'referees', label: 'Referees', icon: 'fa-address-book', kind: 'list', itemName: 'referee',
           lead: 'People who can vouch for you.',

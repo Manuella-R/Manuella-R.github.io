@@ -83,7 +83,7 @@
     {
       "icon": "fa fa-graduation-cap",
       "title": "Strathmore University",
-      "highlight": "Expected August 2026",
+      "highlight": "August 2026",
       "details": "Bachelor of Science in Computer Science & Informatics\nSecond Class Honors (Upper Division)\nRelevant coursework: AI, Machine Learning, Data Structures, Algorithms, Software Development"
     },
     {
@@ -94,6 +94,73 @@
     }
   ],
   "skills": [
+    {
+      "icon": "fa fa-cloud",
+      "title": "Cloud & Linux",
+      "items": [
+        {
+          "name": "Linux command line (CentOS)",
+          "level": 0,
+          "label": "Hands-on"
+        },
+        {
+          "name": "Apache web server",
+          "level": 0,
+          "label": "Hands-on"
+        },
+        {
+          "name": "Cloud VM hosting (Google Cloud)",
+          "level": 0,
+          "label": "Hands-on"
+        },
+        {
+          "name": "Docker & Docker Compose",
+          "level": 0,
+          "label": "Hands-on"
+        },
+        {
+          "name": "AWS architecture & cloud concepts",
+          "level": 0,
+          "label": "6 learning paths"
+        }
+      ]
+    },
+    {
+      "icon": "fa fa-network-wired",
+      "title": "Networking & Support",
+      "items": [
+        {
+          "name": "DNS & subdomains",
+          "level": 0,
+          "label": "Hands-on"
+        },
+        {
+          "name": "SSL/TLS with Certbot",
+          "level": 0,
+          "label": "Hands-on"
+        },
+        {
+          "name": "Firewall rules",
+          "level": 0,
+          "label": "Hands-on"
+        },
+        {
+          "name": "Load balancing",
+          "level": 0,
+          "label": "Hands-on"
+        },
+        {
+          "name": "Cisco networking & cybersecurity",
+          "level": 0,
+          "label": "3 certificates"
+        },
+        {
+          "name": "Troubleshooting & user updates",
+          "level": 0,
+          "label": "IT internship"
+        }
+      ]
+    },
     {
       "icon": "fa fa-brain",
       "title": "Machine Learning",
@@ -215,36 +282,207 @@
   ],
   "projects": [
     {
-      "icon": "fa fa-robot",
-      "title": "StegaShield (Digital Security)",
-      "tech": "Python, Computer Vision, Security Engineering",
-      "description": "Built a dual-layer security system that embeds digital watermarks in images to detect tampering. Designed to remain robust across 17+ common image edits.",
+      "icon": "fa fa-cloud",
+      "title": "Secure Cloud Web Hosting",
+      "categories": [
+        "Cloud & Infrastructure",
+        "Cybersecurity"
+      ],
+      "tech": "CentOS, Apache, PHP, MariaDB, Certbot, DNS, Google Cloud",
+      "description": "Hosted a PHP and MariaDB web application on a cloud-hosted CentOS server, secured with HTTPS.",
+      "problem": "Take a web application from code to a secure, reachable service on a cloud server, and keep it working when things break.",
+      "actions": [
+        "Configured Apache virtual hosts and document roots, DNS and subdomains, and firewall rules",
+        "Enabled HTTPS with a Certbot SSL certificate",
+        "Implemented secure password hashing in PHP and fixed login and signup failures caused by schema and hashing errors",
+        "Diagnosed permission-denied errors (chown/chmod), SSL configuration faults, and DNS propagation and connectivity problems"
+      ],
+      "results": [
+        {
+          "value": "HTTPS",
+          "label": "Certbot SSL certificate"
+        },
+        {
+          "value": "3",
+          "label": "fault types diagnosed: permissions, SSL, DNS"
+        }
+      ],
       "link": "",
-      "linkLabel": ""
+      "linkLabel": "",
+      "demo": ""
+    },
+    {
+      "icon": "fa fa-network-wired",
+      "title": "Consistent-Hashing Load Balancer",
+      "categories": [
+        "Cloud & Infrastructure"
+      ],
+      "tech": "Python, Flask, Docker Compose, REST API",
+      "description": "A containerised load balancer that spreads requests across servers and drops a failed server without interrupting service.",
+      "problem": "Spread requests evenly across servers, and keep the service running when a server stops.",
+      "actions": [
+        "Built a Python/Flask load balancer on Docker Compose with a 512-slot hash ring, virtual nodes and a REST API to add and remove servers",
+        "Implemented heartbeat monitoring that detected a stopped server and removed it from the ring",
+        "Load-tested with 10,000 requests and diagnosed a 96% load skew",
+        "Redesigned the hash function using MD5 and virtual nodes"
+      ],
+      "results": [
+        {
+          "value": "10,000",
+          "label": "requests load-tested"
+        },
+        {
+          "value": "96%",
+          "label": "load skew found and redesigned"
+        },
+        {
+          "value": "0",
+          "label": "service interruptions on server failure"
+        }
+      ],
+      "link": "",
+      "linkLabel": "",
+      "demo": ""
+    },
+    {
+      "icon": "fa fa-shield-alt",
+      "title": "StegaShield",
+      "categories": [
+        "Cybersecurity"
+      ],
+      "tech": "Python, LSB steganography, Computer Vision",
+      "description": "A dual-layer security tool that hides digital watermarks in images to detect tampering.",
+      "problem": "Show whether an image has been altered after it was published.",
+      "actions": [
+        "Built a dual-layer security tool using Python and LSB steganography",
+        "Embedded digital watermarks in images and checked them to detect tampering",
+        "Designed the watermark to remain robust across common image edits"
+      ],
+      "results": [
+        {
+          "value": "17+",
+          "label": "common image edits withstood"
+        }
+      ],
+      "link": "",
+      "linkLabel": "",
+      "demo": ""
+    },
+    {
+      "icon": "fa fa-newspaper",
+      "title": "News Bias Detector",
+      "categories": [
+        "AI & Machine Learning"
+      ],
+      "tech": "Python, BERT, HuggingFace Transformers, NLP",
+      "description": "A fine-tuned language model that flags biased language in news articles.",
+      "problem": "Find biased wording in news content automatically.",
+      "actions": [
+        "Fine-tuned a BERT-based NLP model with Python and HuggingFace Transformers",
+        "Trained it to detect biased language in news articles"
+      ],
+      "results": [
+        {
+          "value": "82%",
+          "label": "accuracy"
+        },
+        {
+          "value": "+18%",
+          "label": "over standard baselines"
+        }
+      ],
+      "link": "",
+      "linkLabel": "",
+      "demo": ""
+    },
+    {
+      "icon": "fa fa-satellite-dish",
+      "title": "Savanna Trace",
+      "categories": [
+        "IoT & Systems"
+      ],
+      "tech": "Python, MQTT, Networking, Automation",
+      "description": "A tracking tool that finds remote campus equipment again when its network settings change.",
+      "problem": "Remote equipment becomes hard to reach when its network address changes.",
+      "actions": [
+        "Built a Python and MQTT tool that tracks and updates the location of remote equipment",
+        "Automated the discovery and update of IP locations so systems stay accessible"
+      ],
+      "results": [],
+      "link": "",
+      "linkLabel": "",
+      "demo": ""
+    },
+    {
+      "icon": "fa fa-tasks",
+      "title": "Dream-Queue Hybrid",
+      "categories": [
+        "IoT & Systems"
+      ],
+      "tech": "Python, Systems Design, Scheduling Algorithms",
+      "description": "A scheduler that runs background tasks on spare processing power without slowing the user's main work.",
+      "problem": "Run background tests without slowing down the task the user is working on.",
+      "actions": [
+        "Developed a Python scheduling system that uses spare processing power",
+        "Kept foreground task performance unaffected while background work runs"
+      ],
+      "results": [],
+      "link": "",
+      "linkLabel": "",
+      "demo": ""
+    },
+    {
+      "icon": "fa fa-bed",
+      "title": "Hostel Connect",
+      "categories": [
+        "Web & Apps",
+        "Cybersecurity"
+      ],
+      "tech": "PHP, Laravel, MySQL, Two-factor authentication",
+      "description": "A hostel web platform built with PHP and Laravel on a MySQL database, with two-factor authentication for sign-in.",
+      "problem": "",
+      "actions": [
+        "Built the platform with PHP and the Laravel framework",
+        "Stored data in a MySQL database",
+        "Added two-factor authentication to protect user accounts"
+      ],
+      "results": [],
+      "link": "",
+      "linkLabel": "",
+      "demo": ""
     },
     {
       "icon": "fa fa-cut",
-      "title": "News Bias Detector (AI)",
-      "tech": "NLP, Model Fine-Tuning, Python",
-      "description": "Fine-tuned a specialized AI model to identify biased language in news content with 82% accuracy, outperforming standard baselines by 18%.",
+      "title": "Glamour Salons",
+      "categories": [
+        "Web & Apps"
+      ],
+      "tech": "Java",
+      "description": "A Java app where customers book hair appointments and see their estimated prices.",
+      "problem": "",
+      "actions": [
+        "Built a Java application for booking hair appointments",
+        "Showed customers an estimated price for their appointment"
+      ],
+      "results": [],
       "link": "",
-      "linkLabel": ""
+      "linkLabel": "",
+      "demo": ""
     },
     {
-      "icon": "fa fa-home",
-      "title": "Dream-Queue Hybrid (Smart Scheduling)",
-      "tech": "Systems Design, Scheduling Algorithms, Performance Engineering",
-      "description": "Developed an intelligent scheduler that uses spare processing power to run background tests while preserving foreground task performance.",
+      "icon": "fa fa-palette",
+      "title": "Graphic Design Portfolio",
+      "categories": [
+        "Design"
+      ],
+      "tech": "",
+      "description": "Posters designed for events and campaigns.",
+      "problem": "",
+      "actions": [],
+      "results": [],
       "link": "",
-      "linkLabel": ""
-    },
-    {
-      "icon": "fa fa-book-open",
-      "title": "Savanna Trace (IoT/Tracking)",
-      "tech": "Networking, IoT, Automation",
-      "description": "Built a resilient tracking tool that automatically discovers and updates the IP locations of remote campus equipment, keeping systems accessible as network settings change.",
-      "link": "",
-      "linkLabel": ""
+      "linkLabel": "",
+      "demo": ""
     }
   ],
   "leadership": [
@@ -353,6 +591,65 @@
       "title": "GitHub",
       "value": "Manuella-R",
       "url": "https://github.com/Manuella-R"
+    }
+  ],
+  "experience": [
+    {
+      "icon": "fa fa-briefcase",
+      "title": "Information Technology Intern",
+      "period": "Jan 2025 - Mar 2025 | Royal Media Services Limited",
+      "pointsLabel": "What I did:",
+      "points": [
+        "Provided system administration and troubleshooting support across the organization's IT infrastructure",
+        "Diagnosed and resolved technical issues to minimize downtime in a live media environment",
+        "Learned and adapted quickly to a range of internal tools, systems and platforms",
+        "Communicated technical updates clearly to non-technical colleagues and stakeholders"
+      ]
+    },
+    {
+      "icon": "fa fa-database",
+      "title": "Data Entry and Analysis",
+      "period": "May 2026 - Jul 2026 | Embassy of Japan",
+      "pointsLabel": "What I did:",
+      "points": [
+        "Verified and cross-checked large volumes of source data for accuracy and completeness before entry into official systems",
+        "Conducted systematic data quality checks, flagging and documenting discrepancies for correction",
+        "Maintained well-documented, audit-ready records in line with organizational standards"
+      ]
+    },
+    {
+      "icon": "fa fa-handshake",
+      "title": "Cultural Volunteer & Liaison",
+      "period": "2024 - Sept 2026 | Embassy of Japan in Kenya",
+      "pointsLabel": "What I did:",
+      "points": [
+        "Represented the Embassy at public events, including the Ambassador's Judo Cup",
+        "Coordinated volunteer teams and on-the-ground logistics for embassy-hosted cultural events",
+        "Educated guests and the wider community on Japanese culture and etiquette",
+        "Built and maintained relationships with community members and partner organizations"
+      ]
+    }
+  ],
+  "credentials": [
+    {
+      "icon": "fab fa-aws",
+      "title": "AWS Learning Paths (6)",
+      "items": [
+        "Fundamentals of Architecting on AWS",
+        "Introduction to Cloud Computing",
+        "Cloud Computing Essentials",
+        "Cloud First Steps",
+        "Networking Concepts",
+        "Databases in Practice"
+      ]
+    },
+    {
+      "icon": "fa fa-network-wired",
+      "title": "Cisco (3 certificates)",
+      "items": [
+        "Computer Networks",
+        "Cybersecurity"
+      ]
     }
   ]
 }
