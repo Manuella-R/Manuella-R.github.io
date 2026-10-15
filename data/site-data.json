@@ -470,6 +470,25 @@
       "demo": ""
     },
     {
+      "title": "Bully-and-Ring-algorithm-for-leader-election",
+      "icon": "fa fa-network-wired",
+      "categories": [
+        "Cloud & Infrastructure"
+      ],
+      "description": "Both algorithms simulate how processes in a distributed system elect a coordinator when failures occur.",
+      "problem": "a central coordinator (or leader node) crashes or goes offline, the remaining processes need a reliable, automated way to agree on a new leader to maintain system stability",
+      "tech": "Java (JDK 8+), Command-Line Interface (CLI)",
+      "actions": [
+        "Implemented Distributed System Algorithms",
+        "Built an Interactive Failure Simulation",
+        "Designed Topology Configurations"
+      ],
+      "results": [],
+      "link": "https://github.com/Manuella-R/Bully-and-Ring-algorithm-for-leader-election",
+      "linkLabel": "",
+      "demo": ""
+    },
+    {
       "title": "",
       "icon": "fa fa-laptop-code",
       "categories": [],
