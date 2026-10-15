@@ -526,7 +526,7 @@
         "Game Development",
         "Web & Apps"
       ],
-      "description": "an action-packed arcade game built using Python and Pygame, where you control a cannon to shoot down falling enemies and avoid getting hit. The game features a level system, power-ups, and shield mechanics to enhance gameplay. You can choose from multiple player models and track your progress with a score, level, and lives system.",
+      "description": "an action-packed arcade game built using Python and Pygame, where you control a cannon to shoot down falling enemies and avoid getting hit. ",
       "problem": "",
       "tech": "Python, Pygame",
       "actions": [
