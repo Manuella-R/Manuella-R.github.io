@@ -116,33 +116,23 @@
       "items": [
         {
           "name": "DNS & subdomains",
-          "level": 0,
+          "level": 50,
           "label": "Hands-on"
         },
         {
           "name": "SSL/TLS with Certbot",
-          "level": 0,
-          "label": "Hands-on"
-        },
-        {
-          "name": "Firewall rules",
-          "level": 0,
+          "level": 50,
           "label": "Hands-on"
         },
         {
           "name": "Load balancing",
-          "level": 0,
+          "level": 60,
           "label": "Hands-on"
         },
         {
           "name": "Cisco networking & cybersecurity",
-          "level": 0,
+          "level": 40,
           "label": "3 certificates"
-        },
-        {
-          "name": "Troubleshooting & user updates",
-          "level": 0,
-          "label": "IT internship"
         }
       ]
     },
