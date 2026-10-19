@@ -608,17 +608,19 @@
       "demo": "https://manuella-r.github.io/Manuella-RT-list/"
     },
     {
-      "title": "",
-      "icon": "fa fa-laptop-code",
-      "categories": [],
-      "description": "",
+      "title": "Japanese Club Website",
+      "icon": "fa fa-users",
+      "categories": [
+        "Web & Apps"
+      ],
+      "description": "Public Website for Strathmore's Japanese Club",
       "problem": "",
-      "tech": "",
+      "tech": "HTML, CSS, JavaScript",
       "actions": [],
       "results": [],
-      "link": "",
+      "link": "https://github.com/Manuella-R/Japanese_club",
       "linkLabel": "",
-      "demo": ""
+      "demo": "https://manuella-r.github.io/Japanese_club/"
     }
   ],
   "leadership": [
